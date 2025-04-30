@@ -7,11 +7,11 @@ const Hero: React.FC = () => {
   
   // Array of image paths
   const images = [
-    '/images/rrrr.png',
-    '/images/s2.jpg',
-    '/images/s3.jpg',
-    '/images/s4.jpg',
-    '/images/s6.jpg'
+    './rrrr.png',
+    './s2.jpg',
+    './s3.jpg',
+    './s4.jpg',
+    './s6.jpg'
   ];
 
   useEffect(() => {

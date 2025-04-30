@@ -506,7 +506,7 @@ const Conservation = () => {
           <div className="md:flex">
             <div className="md:w-2/5">
               <img 
-                src="/images/con1.jpg" 
+                src="./con1.jpg" 
                 alt="Tiger Conservation"
                 className="w-full h-full object-cover"
               />

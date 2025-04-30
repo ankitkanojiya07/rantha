@@ -121,7 +121,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
             <div className="flex items-center">
               <a href="#home" className="flex items-center">
                 <img 
-                  src="/images/logo.png" 
+                  src="./logo.png" 
                   alt="Ranthambore National Park Logo" 
                   className={`transition-all duration-300 ${
                     isScrolled ? 'h-10' : 'h-16'

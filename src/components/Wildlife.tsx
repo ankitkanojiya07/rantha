@@ -71,7 +71,7 @@ const Wildlife: React.FC = () => {
         {
           id: "royal-bengal-tiger",
           name: "Royal Bengal Tiger",
-          image: "./images/l4.jpg",
+          image: "./l4.jpg",
           description: "The apex predator of Ranthambore, each individual can be identified by its unique stripe pattern. Known for their majestic presence, these tigers are often spotted near water bodies.",
           conservationStatus: "Endangered",
           scientificName: "Panthera tigris tigris"
@@ -79,7 +79,7 @@ const Wildlife: React.FC = () => {
         {
           id: "indian-leopard",
           name: "Indian Leopard",
-          image: "./images/leo.jpg",
+          image: "./leo.jpg",
           description: "Masters of stealth, these elusive cats are often seen in the Kachida Valley. They're adaptable hunters who can often be found resting on tree branches during hot days.",
           conservationStatus: "Vulnerable",
           scientificName: "Panthera pardus fusca"
@@ -93,7 +93,7 @@ const Wildlife: React.FC = () => {
         {
           id: "caracal-hyena",
           name: "Caracals & Striped Hyenas",
-          image: "/images/ll.jpg",
+          image: "./ll.jpg",
           description: "Caracals are identified by their distinctive ear tufts, while striped hyenas are nocturnal scavengers with remarkable jaws strong enough to crush bones.",
           conservationStatus: "Near Threatened",
           scientificName: "Caracal caracal & Hyaena hyaena"
@@ -101,7 +101,7 @@ const Wildlife: React.FC = () => {
         {
           id: "jackals-civets",
           name: "Jackals & Indian Civets",
-          image: "/images/jj.jpg",
+          image: "./jj.jpg",
           description: "Golden jackals are opportunistic omnivores, while the palm civet is a nocturnal mammal with a distinctive mask-like facial pattern.",
           conservationStatus: "Least Concern",
           scientificName: "Canis aureus & Viverra zibetha"
@@ -123,7 +123,7 @@ const Wildlife: React.FC = () => {
         {
           id: "painted-storks",
           name: "Painted Storks",
-          image: "/images/pp.webp",
+          image: "./pp.webp",
           description: "These colorful wading birds gather at Ranthambore's lakes, where they can be seen performing elaborate courtship displays during breeding season.",
           conservationStatus: "Near Threatened",
           scientificName: "Mycteria leucocephala"
@@ -131,7 +131,7 @@ const Wildlife: React.FC = () => {
         {
           id: "kingfishers-vultures",
           name: "Kingfishers & Vultures",
-          image: "/images/kk.jpg",
+          image: "./kk.jpg",
           description: "Several kingfisher species add vibrant flashes of color to the park, while vultures play a crucial ecological role as nature's cleanup crew.",
           conservationStatus: "Critically Endangered (vultures)",
           scientificName: "Alcedo atthis & Gyps bengalensis"
@@ -200,7 +200,7 @@ const Wildlife: React.FC = () => {
       id: "bengal-tiger",
       title: "Royal Bengal Tiger",
       description: "The apex predator of Ranthambore, each tiger has unique stripe patterns and territories. The park's success story has led to a thriving population of over 70 tigers.",
-      image: "./images/l4.jpg",
+      image: "./l4.jpg",
       linkText: "Tiger Conservation",
       tags: ['predator', 'endangered', 'carnivore'],
       fullContent: "The Royal Bengal Tiger (Panthera tigris tigris) is the crowning glory of Ranthambore National Park. These majestic creatures can weigh up to 250 kg for males and 150 kg for females. Each tiger has a unique stripe pattern, much like human fingerprints, allowing rangers to identify individuals. Tigers are territorial animals, with males commanding territories up to 100 sq km while females maintain smaller ranges of 20-30 sq km.\n\nRanthambore's success in tiger conservation has been remarkable, with numbers growing from near extinction in the 1970s to over 70 individuals today. The park has played a pivotal role in Project Tiger, India's flagship conservation program launched in 1973.\n\nThe best time to spot these magnificent animals is during the hot summer months when they frequently visit water bodies to cool off. Zones 2, 3, and 4 of the park are known hotspots for tiger sightings, particularly around lakes and water holes.\n\nConservation efforts have been bolstered by strict anti-poaching measures, habitat restoration programs, and community involvement. Local communities now actively participate in conservation through eco-tourism initiatives, creating a sustainable model for wildlife protection."
@@ -209,7 +209,7 @@ const Wildlife: React.FC = () => {
       id: "other-predators",
       title: "Diverse Predators",
       description: "The forests harbor leopards, caracals, striped hyenas, jackals, and the elusive Indian civets. Kachida Valley is especially known for leopard sightings.",
-      image: "./images/leo.jpg",
+      image: "./leo.jpg",
       linkText: "Predator Ecosystem",
       tags: ['predator', 'carnivore', 'nocturnal'],
       fullContent: "While tigers may be the stars of Ranthambore, the park's predator diversity is equally impressive. Leopards (Panthera pardus) are the second largest big cats in the park, known for their stealth and adaptability. Unlike tigers, they often drag their prey up into trees to avoid competition from other predators. The Kachida Valley area of the park is particularly known for leopard sightings.\n\nCaracals, with their distinctive long ear tufts, are rarely spotted but inhabit the drier regions of the park. These medium-sized cats are remarkable hunters, capable of leaping up to 3 meters in the air to catch birds in flight.\n\nStriped hyenas are nocturnal scavengers with incredibly powerful jaws that can crush bones with ease. Despite their reputation, hyenas are important for ecosystem health, cleaning up carcasses and preventing the spread of disease.\n\nGolden jackals operate in pairs or small family packs, playing a crucial role in the ecosystem as both scavengers and predators of smaller animals. Their distinctive calls can often be heard at dawn and dusk.\n\nIndian civets are nocturnal and elusive, identifiable by their distinctive masked face and ringed tail. These predators maintain the delicate balance of Ranthambore's ecosystem by controlling herbivore populations and helping in seed dispersal through their frugivorous diet."
@@ -218,7 +218,7 @@ const Wildlife: React.FC = () => {
       id: "bird-paradise",
       title: "Avian Diversity",
       description: "With over 300 bird species including painted storks, kingfishers, eagles, and vultures, Ranthambore is a birdwatcher's paradise throughout the year.",
-      image: "./images/peo.jpg",
+      image: "./peo.jpg",
       linkText: "Ornithological Guide",
       tags: ['birds', 'migratory', 'resident'],
       fullContent: "Ranthambore National Park is a haven for bird enthusiasts with its rich avifauna comprising over 300 species. The park's varied habitats, from wetlands to deciduous forests, support an impressive diversity of birdlife. Padam Talao, Malik Talao, and Rajbagh Lake are excellent spots for observing water birds.\n\nPainted storks arrive in large numbers during the monsoon and winter seasons, creating spectacular nesting colonies. Their distinctive pink tertial feathers and yellow-tipped bills make them easy to identify even from a distance.\n\nThe park hosts six species of kingfishers, including the vibrant common kingfisher and the larger pied kingfisher. These birds can often be spotted perched near water bodies, diving with precision to catch small fish.\n\nRaptors are well-represented with crested serpent eagles, shikra, and the endangered Indian vultures patrolling the skies. The decline in vulture populations across India makes Ranthambore an important refuge for these scavengers that are vital to ecosystem health.\n\nThe best times for birdwatching are early mornings and late afternoons when birds are most active. During winter months (November to February), migratory birds from as far as Siberia and Europe make Ranthambore their temporary home. Notable winter visitors include the bar-headed geese, northern pintail, and the occasional greater flamingo.\n\nDedicated bird tours can be arranged through the park management for serious birders, often led by local experts with intimate knowledge of bird habitats and behaviors."
@@ -283,7 +283,7 @@ const Wildlife: React.FC = () => {
     {
       id: "banyan-tree",
       name: "Banyan Tree",
-      image: "/images/banyan tree.jpg",
+      image: "./banyan tree.jpg",
       description: "One of India's second-largest banyan trees can be found in Ranthambore. These magnificent trees provide shelter to numerous bird species and are often meeting points for wildlife.",
       category: 'flora',
       scientificName: "Ficus benghalensis",
@@ -292,7 +292,7 @@ const Wildlife: React.FC = () => {
     {
       id: "dhok-tree",
       name: "Dhok Tree",
-      image: "/images/dhok tree.webp",
+      image: "./dhok tree.webp",
       description: "Covering over 80% of the forest, Dhok trees are the dominant species in Ranthambore. Their leaves are a favorite food source for many herbivores, and they are well-adapted to the arid conditions of the region.",
       category: 'flora',
       scientificName: "Anogeissus pendula",
@@ -301,7 +301,7 @@ const Wildlife: React.FC = () => {
     {
       id: "ghost-tree",
       name: "Indian Ghost Tree",
-      image: "/images/ghost tree.jpg",
+      image: "./ghost tree.jpg",
       description: "Known locally as 'Kullu', these trees have a pale, ghostly appearance. They shed their bark each year, revealing a smooth white surface that appears to glow under moonlight.",
       category: 'flora',
       scientificName: "Sterculia urens",
@@ -310,7 +310,7 @@ const Wildlife: React.FC = () => {
     {
       id: "flame-forest",
       name: "Flame of the Forest",
-      image: "/images/flame.jpg",
+      image: "./flame.jpg",
       description: "This deciduous tree produces vibrant orange-red flowers during spring, creating a spectacular contrast against the dried landscape. The flowers are rich in nectar, attracting numerous pollinators.",
       category: 'flora',
       scientificName: "Butea monosperma",
@@ -320,7 +320,7 @@ const Wildlife: React.FC = () => {
     {
       id: "sloth-bear",
       name: "Sloth Bear",
-      image: "/images/sloth.jpg",
+      image: "./sloth.jpg",
       description: "These shaggy-coated bears are specialized in feeding on termites and ants. With their powerful claws, they can tear open hardened termite mounds and use their elongated snout to blow away dirt before sucking up insects.",
       category: 'fauna',
       scientificName: "Melursus ursinus",
@@ -329,7 +329,7 @@ const Wildlife: React.FC = () => {
     {
       id: "sambar-deer",
       name: "Sambar Deer",
-      image: "/images/deer.jpg",
+      image: "./deer.jpg",
       description: "The largest deer species in the Indian subcontinent, the Sambar is an important prey species for tigers. They often give alarm calls when predators are nearby, alerting other animals and safari visitors.",
       category: 'fauna',
       scientificName: "Rusa unicolor",
@@ -338,7 +338,7 @@ const Wildlife: React.FC = () => {
     {
       id: "marsh-crocodile",
       name: "Marsh Crocodile",
-      image: "/images/croc.jpg",
+      image: "./croc.jpg",
       description: "Also known as mugger crocodiles, these reptiles can be spotted basking along the shores of Ranthambore's lakes. They can grow up to 4-5 meters in length and play an important role as apex predators in aquatic ecosystems.",
       category: 'fauna',
       scientificName: "Crocodylus palustris",
@@ -347,7 +347,7 @@ const Wildlife: React.FC = () => {
     {
       id: "indian-python",
       name: "Indian Python",
-      image: "/images/indian python.jpg",
+      image: "./indian python.jpg",
       description: "These non-venomous constrictors can reach lengths of up to 6 meters. They are ambush predators, relying on their camouflage to surprise prey, which they then constrict and swallow whole.",
       category: 'fauna',
       scientificName: "Python molurus",
@@ -678,7 +678,7 @@ const Wildlife: React.FC = () => {
                 <div className="md:w-1/2">
                   <div className="relative rounded-lg overflow-hidden shadow-xl">
                     <img 
-                      src="./images/colab.jpg" 
+                      src="./colab.jpg" 
                       alt="Ranthambore Wildlife"
                       className="w-full h-auto"
                     />

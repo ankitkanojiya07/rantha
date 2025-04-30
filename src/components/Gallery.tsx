@@ -30,7 +30,7 @@ const Gallery: React.FC = () => {
   const images: GalleryImage[] = [
     {
       id: '1',
-      src: '/images/lake.jpg',
+      src: './lake.jpg',
       title: 'Tiger by the Lake',
       description: 'A majestic tiger cooling off near the water edge in Ranthambore National Park.',
       category: 'tigers',
@@ -39,7 +39,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: '2',
-      src: '/images/sunset.JPG',
+      src: './sunset.JPG',
       title: 'Sunrise at Padam Talao',
       description: 'Golden hour at one of Ranthambore\'s most iconic lakes, showcasing the vibrant colors of dawn.',
       category: 'landscape',
@@ -48,7 +48,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: '3',
-      src: '/images/peo.jpg',
+      src: './peo.jpg',
       title: 'Peacock in Full Display',
       description: 'A male peacock showing off his colorful plumage during mating season in the grasslands.',
       category: 'birds',
@@ -57,7 +57,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: '4',
-      src: '/images/f3.jpg',
+      src: './f3.jpg',
       title: 'Ranthambore Fort',
       description: 'The ancient 10th century Ranthambore Fort standing tall amidst the forest, a UNESCO World Heritage site.',
       category: 'heritage',
@@ -66,7 +66,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: '5',
-      src: '/images/petrol.jpg',
+      src: './petrol.jpg',
       title: 'Tiger on Patrol',
       description: 'A Royal Bengal tiger patrolling its territory in the early morning mist, showcasing the apex predator in its natural habitat.',
       category: 'tigers',
@@ -75,7 +75,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: '6',
-      src: '/images/king.jpg',
+      src: './king.jpg',
       title: 'Kingfisher in Action',
       description: 'A White-throated Kingfisher perched perfectly, ready to dive for prey in one of Ranthambore\'s many water bodies.',
       category: 'birds',
@@ -84,7 +84,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: '7',
-      src: '/images/morning.jpg',
+      src: './morning.jpg',
       title: 'Misty Morning',
       description: 'The forest comes alive as the morning mist begins to clear, revealing the diverse ecosystem of Ranthambore.',
       category: 'landscape',
@@ -93,7 +93,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: '8',
-      src: '/images/temp.jpg',
+      src: './temp.jpg',
       title: 'Ancient Temple',
       description: 'One of the many ancient temples within the Ranthambore Fort complex, showcasing intricate architectural details from the 10th century.',
       category: 'heritage',
@@ -102,7 +102,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: '9',
-      src: '/images/cubs.jpg',
+      src: './cubs.jpg',
       title: 'Tiger Cubs at Play',
       description: 'Rare capture of tiger cubs playing near their den in Zone 3 of Ranthambore National Park.',
       category: 'tigers',
@@ -111,7 +111,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: '10',
-      src: '/images/f2.jpg',
+      src: './f2.jpg',
       title: 'Jogi Mahal',
       description: 'The historic Jogi Mahal hunting lodge at the base of the fort, surrounded by lush monsoon vegetation.',
       category: 'heritage',
@@ -120,7 +120,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: '11',
-      src: '/images/owl1.jpg',
+      src: './owl1.jpg',
       title: 'Spotted Owlet',
       description: 'A pair of spotted owlets roosting in the hollow of an ancient banyan tree.',
       category: 'birds',
@@ -129,7 +129,7 @@ const Gallery: React.FC = () => {
     },
     {
       id: '12',
-      src: '/images/fall.jpg',
+      src: './fall.jpg',
       title: 'Monsoon Waterfall',
       description: 'Seasonal waterfall cascading down the cliffs near Ranthambore Fort during peak monsoon season.',
       category: 'landscape',

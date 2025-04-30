@@ -28,7 +28,7 @@ const ZONE_DATA: Record<ZoneId, ZoneData> = {
     id: "core",
     name: "Zones (1-5)",
     description: "The prime tiger territories with higher chances of sightings. Zone 3 is particularly famous for lakes like Rajbagh and Padam Talao where tigers often come to drink water.",
-    image: "/images/zone1.jpg",
+    image: "./zone1.jpg",
     highlights:  [
       "Zone 1: T-101 (M), T-105(F), T-107(F) & T-39(F)",
       "Zone 2: T-84(F) with 3 cubs, T-101 (M), T-105(F), T-120(M), T-123(M)	",
@@ -60,7 +60,7 @@ const ZONE_DATA: Record<ZoneId, ZoneData> = {
     id: "buffer",
     name: "Zones (6-10)",
     description: "Less crowded but equally fascinating, these zones offer a more rustic experience. Zone 6 (Kundal) is known for its open meadows and exceptional birding opportunities.",
-    image: "/images/zone2.jpg",
+    image: "./zone2.jpg",
     highlights: [
       "Zone 6: 	T-39(F), T-108(M), T-127(F), T-101(M)",
       "Zone 7: T-108(M), T-127(F), T-8(F)",
@@ -92,7 +92,7 @@ const ZONE_DATA: Record<ZoneId, ZoneData> = {
     id: "heritage",
     name: "Heritage Sites",
     description: "Discover the magnificent Ranthambore Fort, Jogi Mahal, and ancient temples within the park. These ruins tell tales of Rajput valor and the region's rich history.",
-    image: "/images/zone3.png",
+    image: "./zone3.png",
     highlights: [
       "Ranthambore Fort: 10th century UNESCO site",
       "Jogi Mahal: Ancient lakeside palace",

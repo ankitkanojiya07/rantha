@@ -40,7 +40,7 @@ const About: React.FC = () => {
       icon: <Castle size={24} className="text-amber-800" />,
       shortDesc: "Tales of sieges, valiant Rajput kings, and Mughal invasions. The fort has witnessed centuries of battles and royal ceremonies.",
       fullContent: "The majestic Ranthambore Fort dates back to the 10th century and has been a silent witness to numerous historical events. Built by the Chauhan dynasty, it has weathered countless sieges and battles. The fort's strategic position atop a 700-foot hill gave it military advantage, while its intricate architecture showcases the artistic brilliance of medieval India. Within its walls, you'll find temples dedicated to Ganesh, Shiva, and Ramlalaji, each with their own fascinating history. The fort's massive stone ramparts and imposing gateways tell stories of valor, with each stone bearing witness to the rise and fall of empires. Archaeological findings suggest that the area around the fort has been inhabited since at least 5000 BCE, making it one of India's most historically significant landmarks.",
-      image: "./images/f2.jpg"
+      image: "./f2.jpg"
     },
     {
       title: "Royal Legacy",
@@ -48,7 +48,7 @@ const About: React.FC = () => {
       icon: <Crown size={24} className="text-amber-800" />,
       shortDesc: "The park's role in royal hunting expeditions. Experience the paths where Maharajas once tracked magnificent game.",
       fullContent: "Before becoming a wildlife sanctuary, Ranthambore served as the private hunting grounds for the Maharajas of Jaipur. The elaborate hunting pavilions scattered throughout the park offer glimpses into royal leisure activities of bygone eras. Maharajas would host extravagant hunting parties for visiting dignitaries, including British viceroys and European nobility. The famous hunting lodge known as 'Jogi Mahal' still stands at the edge of Padam Talao lake, though access is now restricted. Historical records mention tiger hunts where over 20 tigers were killed in a single expedition—a stark contrast to today's conservation efforts. The transition from royal hunting reserve to protected sanctuary represents a profound shift in our relationship with wildlife and marks an important chapter in Indian conservation history.",
-      image: "./images/fort.png"
+      image: "./fort.png"
     },
     {
       title: "Modern Conservation",
@@ -56,7 +56,7 @@ const About: React.FC = () => {
       icon: <Shield size={24} className="text-amber-800" />,
       shortDesc: "Turning battlefields into biodiversity havens. Learn how Ranthambore has become a model for wildlife conservation in India.",
       fullContent: "Ranthambore National Park has evolved from near ecological disaster to conservation success story. In 1973, it was among the first nine tiger reserves established under Project Tiger—India's ambitious tiger conservation program. When protection began, fewer than 20 tigers remained; today, the park supports over 70 tigers. Conservation efforts extend beyond tigers to include habitat restoration, anti-poaching measures, and community involvement. The park has pioneered innovative approaches like camera trapping for monitoring wildlife and involving local communities as conservation stakeholders. Former poachers have been rehabilitated as forest guards, using their intimate knowledge of the terrain to protect rather than hunt wildlife. Ranthambore's success has inspired similar projects across Asia, demonstrating how determined conservation efforts can reverse the decline of endangered species.",
-      image: "./images/fort1.png"
+      image: "./fort1.png"
     }
   ];
 
@@ -141,7 +141,7 @@ const About: React.FC = () => {
               {/* Main Image */}
               <div className="rounded-lg overflow-hidden shadow-2xl">
                 <img 
-                  src="/images/map.jpg" 
+                  src="./map.jpg" 
                   alt="Ranthambore Fort" 
                   className="w-full h-auto object-cover"
                 />

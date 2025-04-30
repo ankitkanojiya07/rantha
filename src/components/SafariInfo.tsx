@@ -261,7 +261,7 @@ const SafariInfo: React.FC = () => {
     {
       title: "Gypsy Safari (6-Seater)",
       description: "More maneuverable, ideal for photography enthusiasts",
-      image: "./images/g3.jpg", 
+      image: "./g3.jpg", 
       icon: <Camera className="h-6 w-6 text-white" />,
       details: {
         capacity: "Maximum 6 visitors plus driver and guide",
@@ -283,7 +283,7 @@ const SafariInfo: React.FC = () => {
     {
       title: "Canter Safari (20-Seater)",
       description: "Cost-effective option, perfect for larger groups",
-      image: "./images/g1.jpg",
+      image: "./g1.jpg",
       icon: <Users className="h-6 w-6 text-white" />,
       details: {
         capacity: "Up to 20 visitors with driver and guide",
@@ -343,7 +343,7 @@ const SafariInfo: React.FC = () => {
         <div className="relative overflow-hidden rounded-lg shadow-xl">
           <div className="h-96 bg-cover bg-center relative">
             <img 
-              src="./images/b1.jpg" 
+              src="./b1.jpg" 
               alt="Wildlife Safari Experience"
               className="w-full h-full object-cover"
             />
