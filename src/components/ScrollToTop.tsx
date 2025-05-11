@@ -3,6 +3,7 @@ import { ChevronUp } from 'lucide-react';
 
 const ScrollToTop: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   // Show button when page is scrolled
   const toggleVisibility = () => {
@@ -22,8 +23,23 @@ const ScrollToTop: React.FC = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    // Use throttling to improve performance
+    let scrollTimeout: ReturnType<typeof setTimeout>;
+    
+    const handleScroll = () => {
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      
+      scrollTimeout = setTimeout(() => {
+        toggleVisibility();
+      }, 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+    };
   }, []);
 
   return (
@@ -31,14 +47,29 @@ const ScrollToTop: React.FC = () => {
       <button
         type="button"
         onClick={scrollToTop}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         className={`
-          p-3 rounded-full bg-[#BBB157] text-[#2A4010] shadow-lg hover:bg-[#2A4010] hover:text-white
-          transition-all duration-300 focus:outline-none
-          ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10 pointer-events-none'}
+          p-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500
+          transition-all duration-300 ease-in-out
+          ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}
+          ${isHovered ? 'bg-teal-800 text-white scale-110' : 'bg-teal-600 text-white'}
         `}
         aria-label="Scroll to top"
       >
         <ChevronUp className="h-6 w-6" />
+        
+        {/* Optional tooltip that appears on hover */}
+        <span 
+          className={`
+            absolute bottom-full mb-2 left-1/2 -translate-x-1/2 whitespace-nowrap
+            bg-teal-900 text-white text-xs px-2 py-1 rounded
+            transition-all duration-200
+            ${isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
+          `}
+        >
+          Back to top
+        </span>
       </button>
     </div>
   );

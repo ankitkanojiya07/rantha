@@ -43,7 +43,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-neutral-50 text-gray-800">
+    <div className="bg-neutral-50 text-gray-800 relative w-full overflow-x-hidden">
       <Header activeSection={activeSection} />
       <main>
         <Hero />

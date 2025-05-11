@@ -83,10 +83,11 @@ const About: React.FC = () => {
         <div className="text-center mb-16">
           <div className="inline-block">
             <span className="text-sm font-semibold text-amber-900 uppercase tracking-widest mb-2 block">Discover Our Heritage</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-amber-950 relative inline-block">
-              About Ranthambore
-              <span className={`absolute bottom-0 left-0 w-full h-1 bg-amber-800 transform origin-left transition-transform duration-1000 ease-out ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}></span>
-            </h2>
+           <h2 className="text-4xl md:text-5xl font-bold text-amber-950 relative inline-block pb-2">
+  About Ranthambore
+  <span className={`absolute bottom-0 left-0 w-full h-1 bg-amber-800 transform origin-left transition-transform duration-1000 ease-out ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}></span>
+</h2>
+
           </div>
           <p className="mt-4 text-amber-800 max-w-3xl mx-auto text-lg">
             A Tapestry of History, Nature, and Culture

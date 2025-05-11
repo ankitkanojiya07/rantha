@@ -164,11 +164,11 @@ const Footer: React.FC = () => {
         {/* Copyright */}
         <div className="border-t border-gray-700 pt-8 text-center">
           <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} Ranthambore National Park. All Rights Reserved.
+            &copy; {new Date().getFullYear()} Ranthambore National Park All Rights Reserved.
           </p>
-          <p className="text-gray-400 mt-2">
-            Website designed with ❤️ for wildlife conservation
-          </p>
+          {/* <p className="text-gray-400 mt-2">
+            Website designed by <a href="https://www.example.com" className="text-[#BBB157] hover:text-[#BBB157]">Ankit</a>
+          </p> */}
         </div>
       </div>
     </footer>

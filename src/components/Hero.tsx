@@ -1,115 +1,148 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 const Hero: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [scrollIndicator, setScrollIndicator] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
   
-  // Array of image paths
   const images = [
     './rrrr.png',
-    './s2.jpg',
+    './petrol.jpg',
     './s3.jpg',
-    './s4.jpg',
-    './s6.jpg'
+    './morning.jpg',
+    './s8.jpg'
   ];
 
   useEffect(() => {
-    // Animation entrance delay
     const entranceTimer = setTimeout(() => {
       setIsVisible(true);
-    }, 300);
+    }, 200);
 
-    // Image slider interval
     const sliderInterval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000);
+      if (!isPaused) {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }
+    }, 6000);
 
-    // Hide scroll indicator when scrolling starts
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setScrollIndicator(false);
-      } else {
-        setScrollIndicator(true);
+    const handleParallax = () => {
+      if (sliderRef.current && heroRef.current) {
+        const scrollPosition = window.scrollY;
+        const heroHeight = heroRef.current.offsetHeight;
+        const scrollPercentage = Math.min(scrollPosition / heroHeight, 1);
+        
+        sliderRef.current.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+        
+        if (heroRef.current) {
+          heroRef.current.style.opacity = `${1 - scrollPercentage * 0.6}`;
+        }
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleParallax);
     
     return () => {
       clearTimeout(entranceTimer);
       clearInterval(sliderInterval);
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleParallax);
     };
-  }, [images.length]);
+  }, [isPaused, images.length]);
+
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, [images]);
 
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center"
+      ref={heroRef}
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black"
       aria-label="Welcome to Ranthambore National Park"
     >
-      {/* Dynamic Backgrounds - Create depth with multiple layers */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Main background image with slider functionality */}
+      <div 
+        ref={sliderRef}
+        className="absolute inset-0 overflow-hidden"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-100 filter brightness-90 transition-opacity duration-1000 ${
-              currentImageIndex === index ? 'opacity-100' : 'opacity-0'
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transform transition-all duration-2000 ease-out ${
+              currentImageIndex === index 
+                ? 'opacity-100 scale-105' 
+                : index === (currentImageIndex - 1 + images.length) % images.length 
+                  ? 'opacity-0 scale-100 -translate-x-8' 
+                  : 'opacity-0 scale-100 translate-x-8'
             }`}
             style={{
               backgroundImage: `url('${image}')`,
-              backgroundAttachment: 'fixed'
+              backgroundAttachment: 'fixed',
+              willChange: 'transform, opacity'
             }}
             aria-hidden={currentImageIndex !== index}
           />
         ))}
 
-        {/* Gradient overlay for better text visibility */}
-        <div className="absolute inset-0  from-teal-800 via-transparent to-teal-900 opacity-70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-teal-900/60 via-black/30 to-teal-900/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
 
-        {/* Subtle texture overlay */}
         <div 
-          className="absolute inset-0 bg-teal-700 opacity-5"
-          style={{backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'1\'/%3E%3C/g%3E%3C/svg%3E")'}}
+          className="absolute inset-0 bg-black opacity-20 mix-blend-overlay"
+          style={{
+            backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/svg%3E")',
+            backgroundSize: '100px 100px'
+          }}
+        />
+        
+        <div className="absolute inset-0 bg-radial-gradient pointer-events-none" 
+          style={{
+            background: 'radial-gradient(circle, transparent 40%, rgba(0,0,0,0.4) 100%)'
+          }} 
         />
       </div>
 
-      {/* Hero Content */}
-      <div className="relative z-10 container mx-auto px-4 pt-20 pb-16 flex flex-col items-center">
-        <div className={`max-w-4xl text-center transform transition-all duration-1000 ease-out ${
+      <div className="relative z-10 container mx-auto px-6 pt-32 pb-16 flex flex-col items-center">
+        <div className={`max-w-5xl text-center transform transition-all duration-1000 ease-out ${
           isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
         }`}>
-          {/* Image counter indicator */}
-          {/* <div className="flex justify-center mt-8 space-x-2">
-            {images.map((_, index) => (
-              <button
-                key={index}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  currentImageIndex === index ? 'bg-white scale-125' : 'bg-gray-400 bg-opacity-50'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-                onClick={() => setCurrentImageIndex(index)}
-              />
-            ))}
-          </div> */}
           
-          {/* Action buttons */}
-          <div className={`flex flex-wrap justify-center gap-6 transition-all duration-1000 delay-900 ${
+          <h2 className="text-center text-white drop-shadow-lg mb-6"><span className="block text-5xl md:text-7xl font-extrabold tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-white to-orange-400 animate-text-shimmer">
+              <span className="inline-block mr-2">🐾</span> Ranthambore <span className="inline-block ml-2">🐾</span>
+            </span>
+            <span className="block text-3xl md:text-3xl font-extrabold tracking-tight leading-tight bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-white to-orange-400 animate-text-shimmer italic">
+              More Than a Place — A Living Concept of Nature and Legacy
+            </span>
+          </h2>
+          
+          <div className={`flex flex-wrap justify-center gap-6 transition-all duration-1000 delay-500 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}>
           </div>
         </div>
       </div>
-
-      {/* Animated featured highlights */}
-      <div className={`relative z-10 container mx-auto px-4 transition-all duration-1000 delay-1200 ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}>
-      </div>
     </section>
   );
 };
+
+const customStyles = `
+@keyframes text-shimmer {
+  0% {
+    background-position: -100% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animate-text-shimmer {
+  animation: text-shimmer 8s ease-in-out infinite;
+  background-size: 200% 100%;
+}
+`;
 
 export default Hero;
