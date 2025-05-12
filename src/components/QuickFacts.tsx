@@ -28,7 +28,7 @@ const QuickFacts: React.FC = () => {
 
   const facts = [
     {
-      icon: <MapPin className="h-8 w-8 text-emerald-700" />,
+      icon: <MapPin className="h-8 w-8 text-[#997B66]" />,
       title: "Location",
       description: "Sawai Madhopur district, Rajasthan, at the junction of Aravalli and Vindhya hill ranges.",
       stats: [
@@ -37,7 +37,7 @@ const QuickFacts: React.FC = () => {
       ]
     },
     {
-      icon: <Ruler className="h-8 w-8 text-emerald-700" />,
+      icon: <Ruler className="h-8 w-8 text-[#997B66]" />,
       title: "Park Area",
       description: "1,334 sq. km of diverse landscapes including dry deciduous forests, open grasslands, and lakes.",
       stats: [
@@ -46,7 +46,7 @@ const QuickFacts: React.FC = () => {
       ]
     },
     {
-      icon: <CloudSun className="h-8 w-8 text-emerald-700" />,
+      icon: <CloudSun className="h-8 w-8 text-[#997B66]" />,
       title: "Best Time to Visit",
       description: "October to April when the weather is pleasant and wildlife sightings are frequent.",
       stats: [
@@ -55,7 +55,7 @@ const QuickFacts: React.FC = () => {
       ]
     },
     {
-      icon: <Camera className="h-8 w-8 text-emerald-700" />,
+      icon: <Camera className="h-8 w-8 text-[#997B66]" />,
       title: "Wildlife Viewing",
       description: "Royal Bengal Tigers and diverse ecosystem with over 300 bird species and various wildlife.",
       stats: [
@@ -64,7 +64,7 @@ const QuickFacts: React.FC = () => {
       ]
     },
     {
-      icon: <Compass className="h-8 w-8 text-emerald-700" />,
+      icon: <Compass className="h-8 w-8 text-[#997B66]" />,
       title: "Safari Types",
       description: "Jeep safaris, canter safaris, and nature walks with expert guides for comprehensive wildlife exploration.",
       stats: [
@@ -73,7 +73,7 @@ const QuickFacts: React.FC = () => {
       ]
     },
     {
-      icon: <Calendar className="h-8 w-8 text-emerald-700" />,
+      icon: <Calendar className="h-8 w-8 text-[#997B66]" />,
       title: "Park Season",
       description: "Open from October 1 to June 30 annually. Closed during monsoon season (July-September).",
       stats: [
@@ -82,7 +82,7 @@ const QuickFacts: React.FC = () => {
       ]
     },
     {
-      icon: <Leaf className="h-8 w-8 text-emerald-700" />,
+      icon: <Leaf className="h-8 w-8 text-[#997B66]" />,
       title: "Ecosystem",
       description: "Diverse habitats including dense jungle, grasslands, lakes, and ancient ruins providing unique niches for wildlife.",
       stats: [
@@ -91,7 +91,7 @@ const QuickFacts: React.FC = () => {
       ]
     },
     {
-      icon: <BadgeCheck className="h-8 w-8 text-emerald-700" />,
+      icon: <BadgeCheck className="h-8 w-8 text-[#997B66]" />,
       title: "Conservation Status",
       description: "Designated as Project Tiger reserve in 1973 and continues to be one of India's most successful conservation stories.",
       stats: [
@@ -104,28 +104,27 @@ const QuickFacts: React.FC = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-emerald-50 to-white relative overflow-hidden"
+      className="py-20 bg-gradient-to-b from-[#F8F5F0] to-white relative overflow-hidden font-serif"
     >
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: "url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23065f46\" fill-opacity=\"0.4\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')",
+          backgroundImage: "url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23997B66\" fill-opacity=\"0.4\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')",
         }} />
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-300 rounded-full transform translate-x-1/2 -translate-y-1/2 opacity-10"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-700 rounded-full transform -translate-x-1/2 translate-y-1/2 opacity-10"></div>
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[#E5DED3] rounded-full transform translate-x-1/2 -translate-y-1/2 opacity-30"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#997B66] rounded-full transform -translate-x-1/2 translate-y-1/2 opacity-10"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section header with highlighted tagline */}
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 transform translate-y-8'}`}>
           <div className="inline-block max-w-3xl">
-          <h2 className="text-xl md:text-2xl font-bold text-emerald-900 relative inline-block px-6 py-3 bg-emerald-100 rounded-lg shadow-sm">
-  Quick Facts About Ranthambore
-  <span className={`absolute bottom-0 left-0 w-full h-1 bg-emerald-600 transform origin-left transition-transform duration-1000 ease-out ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}></span>
-</h2>
-
+          <h2 className="text-xl md:text-2xl font-bold text-[#3C3228] relative inline-block px-6 py-3 bg-[#F2EDE4] rounded-lg shadow-sm">
+            Quick Facts About Ranthambore
+            <span className={`absolute bottom-0 left-0 w-full h-1 bg-[#997B66] transform origin-left transition-transform duration-1000 ease-out ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}></span>
+          </h2>
           </div>
         </div>
         
@@ -139,15 +138,15 @@ const QuickFacts: React.FC = () => {
               }`}
               style={{ transitionDelay: `${150 * (index % 4)}ms` }}
             >
-              <div className="h-2 bg-emerald-600"></div>
+              <div className="h-2 bg-[#997B66]"></div>
               <div className="p-6">
                 <div className="flex items-start mb-4">
-                  <div className="bg-emerald-50 p-3 rounded-lg mr-4">
+                  <div className="bg-[#F2EDE4] p-3 rounded-lg mr-4">
                     {fact.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-emerald-900 mb-1">{fact.title}</h3>
-                    <p className="text-gray-600 text-sm">{fact.description}</p>
+                    <h3 className="text-xl font-bold text-[#3C3228] mb-1 font-serif">{fact.title}</h3>
+                    <p className="text-[#5C5248] text-sm">{fact.description}</p>
                   </div>
                 </div>
                 
@@ -155,8 +154,8 @@ const QuickFacts: React.FC = () => {
                   <div className="flex justify-between">
                     {fact.stats.map((stat, idx) => (
                       <div key={idx} className="text-center">
-                        <div className="text-xl font-bold text-emerald-700">{stat.value}</div>
-                        <div className="text-xs text-gray-500 uppercase tracking-wide">{stat.label}</div>
+                        <div className="text-xl font-bold text-[#997B66]">{stat.value}</div>
+                        <div className="text-xs text-[#7D7268] uppercase tracking-wide">{stat.label}</div>
                       </div>
                     ))}
                   </div>
@@ -171,13 +170,13 @@ const QuickFacts: React.FC = () => {
           isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
         }`}>
           <div className="inline-block relative">
-            <a href="#booking" className="inline-flex items-center px-8 py-4 bg-emerald-800 text-white font-bold rounded-lg shadow-lg hover:bg-emerald-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-emerald-800 focus:ring-offset-2 group">
+            <a href="#booking" className="inline-flex items-center px-8 py-4 bg-[#997B66] text-white font-bold rounded-lg shadow-lg hover:bg-[#7D6356] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#997B66] focus:ring-offset-2 group">
               <span className="mr-2">Plan Your Safari Experience</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transform transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </a>
-            <div className="absolute -bottom-2 -right-2 w-full h-full bg-emerald-500 rounded-lg -z-10"></div>
+            <div className="absolute -bottom-2 -right-2 w-full h-full bg-[#C4B6A6] rounded-lg -z-10"></div>
           </div>
         </div>
       </div>

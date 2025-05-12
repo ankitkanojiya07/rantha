@@ -23,7 +23,7 @@ const EnvironmentalSustainability = () => {
     {
       id: 'eco-construction',
       title: 'Eco-friendly Construction',
-      icon: <Leaf className="text-green-600" />,
+      icon: <Leaf className="text-[#3C3228]-600" />,
       content: (
         <div className="space-y-2">
           <p>Our resort utilizes sustainable building materials that minimize environmental impact while creating a luxurious experience:</p>
@@ -128,7 +128,7 @@ const EnvironmentalSustainability = () => {
     {
       id: 'economic',
       title: 'Economic Sustainability',
-      icon: <DollarSign className="text-green-500" />,
+      icon: <DollarSign className="text-[#3C3228]-500" />,
       content: (
         <div className="space-y-2">
           <p>Our business model ensures long-term prosperity for all stakeholders:</p>
@@ -147,7 +147,7 @@ const EnvironmentalSustainability = () => {
   return (
     <section 
       id="sustainability" 
-      className="py-16 bg-gradient-to-b from-green-50 to-white"
+      className="py-16 bg-[#f5ebe0] from-green-50 to-white"
     >
       <div className={`container mx-auto px-4 transition-all duration-1000 ${
         isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-8"
@@ -155,7 +155,7 @@ const EnvironmentalSustainability = () => {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">Environmental Sustainability</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#3C3228]-800 mb-4">Environmental Sustainability</h2>
             <p className="text-lg text-gray-700">
               Our commitment to preserving the natural world goes beyond words—it's embedded in everything we do.
             </p>
@@ -214,7 +214,7 @@ const EnvironmentalSustainability = () => {
               Experience our commitment to sustainability firsthand and discover how luxury and 
               environmental responsibility can go hand in hand.
             </p>
-            <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md">
+            <button className="bg-[#3C3228] hover:bg-[#3C3228]  text-[#f5ebe0] font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md">
               Book Your Eco-Safari Experience
             </button>
           </div>

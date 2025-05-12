@@ -131,11 +131,11 @@ const Testimonials: React.FC = () => {
     <section className="py-16 bg-[#FFF8E8]">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">
+          <h2 className="text-3xl font-bold text-[#3C3228]-800 mb-2">
             Client Testimonials
           </h2>
           <div className="w-24 h-1 bg-emerald-700 mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-[#3C3228]-600 max-w-2xl mx-auto">
             Authentic experiences shared by wildlife enthusiasts and travelers who have explored Ranthambore National Park
           </p>
         </div>
@@ -150,7 +150,7 @@ const Testimonials: React.FC = () => {
             className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 md:-ml-6 z-10 bg-white shadow-md rounded-full p-2 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft className="w-5 h-5 text-gray-700" />
+            <ChevronLeft className="w-5 h-5 text-[#3C3228]-700" />
           </button>
           
           <div className="overflow-hidden rounded-lg shadow-lg">
@@ -163,23 +163,23 @@ const Testimonials: React.FC = () => {
                   <div className="bg-white p-8 border-l-4 border-emerald-600">
                     <div className="flex justify-between items-start mb-6">
                       <div className="flex items-center">
-                        <Quote className="w-10 h-10 text-emerald-600 opacity-30 mr-3" />
+                        <Quote className="w-10 h-10 text-[#3C3228] opacity-30 mr-3" />
                         {/* Rating Stars */}
                         <div className="flex">
                           {[...Array(5)].map((_, i) => (
                             <Star 
                               key={i} 
-                              className={`w-4 h-4 ${i < testimonial.rating ? 'text-amber-400 fill-amber-400' : 'text-gray-300'}`}
+                              className={`w-4 h-4 ${i < testimonial.rating ? 'text-amber-400 fill-amber-400' : 'text-[#3C3228]-300'}`}
                             />
                           ))}
                         </div>
                       </div>
-                      <div className="text-xs text-gray-500 italic">
+                      <div className="text-xs text-[#3C3228]-500 italic">
                         Visited: {testimonial.visitDate}
                       </div>
                     </div>
                     
-                    <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                    <p className="text-[#3C3228]-700 text-lg leading-relaxed mb-6">
                       "{testimonial.text}"
                     </p>
                     
@@ -188,11 +188,11 @@ const Testimonials: React.FC = () => {
                         {testimonial.author.split(' ').map(name => name[0]).join('')}
                       </div>
                       <div className="ml-4">
-                        <p className="font-semibold text-gray-800">{testimonial.author}</p>
+                        <p className="font-semibold text-[#3C3228]-800">{testimonial.author}</p>
                         <div className="flex items-center text-sm">
-                          <span className="text-gray-600">{testimonial.location}</span>
-                          <span className="mx-2 text-gray-400">•</span>
-                          <span className="text-emerald-700 font-medium">{testimonial.tripType}</span>
+                          <span className="text-[#3C3228]-600">{testimonial.location}</span>
+                          <span className="mx-2 text-[#3C3228]-400">•</span>
+                          <span className="text-[#3C3228] font-medium">{testimonial.tripType}</span>
                         </div>
                       </div>
                     </div>
@@ -210,7 +210,7 @@ const Testimonials: React.FC = () => {
             className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 md:-mr-6 z-10 bg-white shadow-md rounded-full p-2 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500"
             aria-label="Next testimonial"
           >
-            <ChevronRight className="w-5 h-5 text-gray-700" />
+            <ChevronRight className="w-5 h-5 text-[#3C3228]-700" />
           </button>
 
           {/* Pagination Indicators */}
@@ -235,10 +235,10 @@ const Testimonials: React.FC = () => {
           {/* Verification Badge */}
           <div className="flex justify-center mt-10">
             <div className="flex items-center bg-emerald-50 px-4 py-2 rounded-full text-sm">
-              <svg className="w-4 h-4 text-emerald-700 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 text-[#3C3228] mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span className="text-gray-700">Verified Guest Reviews</span>
+              <span className="text-[#3C3228]-700">Verified Guest Reviews</span>
             </div>
           </div>
         </div>
@@ -246,11 +246,11 @@ const Testimonials: React.FC = () => {
         {/* FAQ Section */}
         <div className="max-w-4xl mx-auto mt-24">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">
+            <h2 className="text-3xl font-bold text-[#3C3228] mb-2">
               Frequently Asked Questions
             </h2>
             <div className="w-24 h-1 bg-emerald-700 mx-auto mb-4"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-[#3C3228]-600 max-w-2xl mx-auto">
               Everything you need to know about planning your visit to Ranthambore National Park
             </p>
           </div>
@@ -262,11 +262,11 @@ const Testimonials: React.FC = () => {
                   className="w-full flex justify-between items-center p-6 text-left focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:ring-inset"
                   onClick={() => toggleFAQ(faq.id)}
                 >
-                  <h3 className="text-lg font-medium text-gray-800">{faq.question}</h3>
+                  <h3 className="text-lg font-medium text-[#3C3228]-800">{faq.question}</h3>
                   {faq.isOpen ? (
-                    <ChevronUp className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                    <ChevronUp className="w-5 h-5 text-[#3C3228] flex-shrink-0" />
                   ) : (
-                    <ChevronDown className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                    <ChevronDown className="w-5 h-5 text-[#3C3228] flex-shrink-0" />
                   )}
                 </button>
                 
@@ -275,7 +275,7 @@ const Testimonials: React.FC = () => {
                     faq.isOpen ? 'max-h-96 pb-6' : 'max-h-0'
                   }`}
                 >
-                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                  <p className="text-[#3C3228]-600 leading-relaxed">{faq.answer}</p>
                 </div>
               </div>
             ))}
@@ -284,7 +284,7 @@ const Testimonials: React.FC = () => {
           <div className="text-center mt-8">
             <a 
               href="https://ranthamboreregency.com/the-jungle-safari/" 
-              className="inline-flex items-center px-6 py-3 bg-emerald-700 text-white font-medium rounded-lg hover:bg-emerald-800 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+              className="inline-flex items-center px-6 py-3 bg-[#3C3228] text-[#f5ebe0]  font-medium rounded-lg hover:bg-[#3C3228]-800 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
             >
               Book Your Safari Now
               <ChevronRight className="w-5 h-5 ml-2" />

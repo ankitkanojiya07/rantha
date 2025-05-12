@@ -7,7 +7,7 @@ const Conservation = () => {
   const conservationCards = [
     {
       id: "project-tiger",
-      icon: <Shield className="h-8 w-8 text-emerald-700" />,
+      icon: <Shield className="h-8 w-8 text-[#3C3228]-700" />,
       title: "Project Tiger",
       description: "Launched in 1973, Project Tiger has been instrumental in bringing back tigers from the brink of extinction. Ranthambore is one of the success stories of this initiative.",
       link: "Learn About Project Tiger",
@@ -55,7 +55,7 @@ const Conservation = () => {
     },
     {
       id: "anti-poaching",
-      icon: <Leaf className="h-8 w-8 text-emerald-700" />,
+      icon: <Leaf className="h-8 w-8 text-[#3C3228]-700" />,
       title: "Anti-Poaching Efforts",
       description: "Dedicated anti-poaching teams patrol the park regularly. Technological advancements like drone surveillance have strengthened protection mechanisms.",
       link: "Protection Measures",
@@ -110,7 +110,7 @@ const Conservation = () => {
     },
     {
       id: "community",
-      icon: <Users className="h-8 w-8 text-emerald-700" />,
+      icon: <Users className="h-8 w-8 text-[#3C3228]-700" />,
       title: "Community Engagement",
       description: "Local communities are actively involved in conservation through eco-tourism initiatives, providing sustainable livelihoods and reducing dependency on forest resources.",
       link: "Community Programs",
@@ -183,21 +183,21 @@ const Conservation = () => {
     <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
       <div className="p-6">
         <div className="flex justify-center mb-5">
-          <div className="p-3 bg-emerald-50 rounded-full">
+          <div className="p-3 bg-[#f5ebe0] rounded-full">
             {card.icon}
           </div>
         </div>
-        <h3 className="text-xl font-semibold text-emerald-800 mb-3 text-center">{card.title}</h3>
+        <h3 className="text-xl font-semibold text-[#3C3228]-800 mb-3 text-center">{card.title}</h3>
         <p className="text-gray-600 text-sm leading-relaxed mb-5">{card.description}</p>
         <div className="text-center">
           <button 
             onClick={() => openModal(card.id)}
-            className="inline-flex items-center text-emerald-700 font-medium text-sm hover:text-emerald-900 transition-colors group"
+            className="inline-flex items-center text-[#3C3228]-700 font-medium text-sm hover:text-[#3C3228]-900 transition-colors group"
             aria-label={`Learn more about ${card.title}`}
           >
             <span>{card.link}</span>
             <ExternalLink className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-emerald-200 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#f5ebe0] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
           </button>
         </div>
       </div>
@@ -207,8 +207,8 @@ const Conservation = () => {
   // Timeline Item Component
   const TimelineItem = ({ year, event }) => (
     <div className="mb-6 relative">
-      <div className="absolute -left-6 w-4 h-4 rounded-full bg-emerald-200 border-2 border-emerald-600"></div>
-      <h4 className="text-lg font-semibold text-emerald-800">{year}</h4>
+      <div className="absolute -left-6 w-4 h-4 rounded-full bg-[#f5ebe0] border-2 border-emerald-600"></div>
+      <h4 className="text-lg font-semibold text-[#3C3228]-800">{year}</h4>
       <p className="text-gray-700">{event}</p>
     </div>
   );
@@ -216,15 +216,15 @@ const Conservation = () => {
   // Metric Card Component
   const MetricCard = ({ label, value }) => (
     <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-      <div className="text-emerald-600 font-medium text-sm mb-1">{label}</div>
-      <div className="text-xl font-bold text-emerald-900">{value}</div>
+      <div className="text-[#3C3228]-600 font-medium text-sm mb-1">{label}</div>
+      <div className="text-xl font-bold text-[#3C3228]-900">{value}</div>
     </div>
   );
 
   // Team Card Component
   const TeamCard = ({ team }) => (
     <div className="bg-gray-50 p-4 rounded-lg mb-4 border-l-4 border-emerald-600">
-      <h4 className="font-semibold text-emerald-800">{team.name}</h4>
+      <h4 className="font-semibold text-[#3C3228]-800">{team.name}</h4>
       <p className="text-gray-600 text-sm">{team.description}</p>
     </div>
   );
@@ -232,9 +232,9 @@ const Conservation = () => {
   // Program Card Component
   const ProgramCard = ({ program }) => (
     <div className="bg-gray-50 p-4 rounded-lg mb-4 border-l-4 border-emerald-500">
-      <h4 className="font-semibold text-emerald-800">{program.name}</h4>
+      <h4 className="font-semibold text-[#3C3228]-800">{program.name}</h4>
       <p className="text-gray-600 text-sm mb-2">{program.description}</p>
-      <div className="text-xs bg-emerald-50 p-2 rounded text-emerald-800 font-medium">
+      <div className="text-xs bg-[#f5ebe0] p-2 rounded text-[#3C3228]-800 font-medium">
         <strong>Impact:</strong> {program.impact}
       </div>
     </div>
@@ -243,7 +243,7 @@ const Conservation = () => {
   // List Item Component
   const ListItem = ({ children }) => (
     <li className="flex items-start mb-2">
-      <Check className="mr-2 text-emerald-600 flex-shrink-0 mt-1" size={16} />
+      <Check className="mr-2 text-[#3C3228]-600 flex-shrink-0 mt-1" size={16} />
       <span className="text-gray-700 text-sm">{children}</span>
     </li>
   );
@@ -270,8 +270,8 @@ const Conservation = () => {
             >
               <X size={20} className="text-gray-800" />
             </button>
-            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-6">
-              <h2 className="text-2xl font-bold text-white">{activeContent.header}</h2>
+            <div className="absolute bottom-0 left-0 w-full bg-[#f5ebe0] from-black to-transparent p-6">
+              <h2 className="text-2xl font-bold text-[#2b2d42]">{activeContent.header}</h2>
             </div>
           </div>
           
@@ -281,7 +281,7 @@ const Conservation = () => {
             {activeModal === "project-tiger" && (
               <>
                 <div className="mb-10">
-                  <h3 className="text-xl font-semibold text-emerald-800 mb-5 flex items-center">
+                  <h3 className="text-xl font-semibold text-[#3C3228]-800 mb-5 flex items-center">
                     <Calendar className="mr-2" size={20} />
                     Historical Timeline
                   </h3>
@@ -293,7 +293,7 @@ const Conservation = () => {
                 </div>
                 
                 <div className="mb-10">
-                  <h3 className="text-xl font-semibold text-emerald-800 mb-4 flex items-center">
+                  <h3 className="text-xl font-semibold text-[#3C3228]-800 mb-4 flex items-center">
                     <Shield className="mr-2" size={20} />
                     Key Initiatives
                   </h3>
@@ -304,8 +304,8 @@ const Conservation = () => {
                   </ul>
                 </div>
                 
-                <div className="mb-10 bg-emerald-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-emerald-800 mb-5 flex items-center">
+                <div className="mb-10 bg-[#f5ebe0] p-6 rounded-lg">
+                  <h3 className="text-xl font-semibold text-[#3C3228]-800 mb-5 flex items-center">
                     <Award className="mr-2" size={20} />
                     Success Metrics
                   </h3>
@@ -318,7 +318,7 @@ const Conservation = () => {
                 </div>
                 
                 <div className="mb-10">
-                  <h3 className="text-xl font-semibold text-emerald-800 mb-4 flex items-center">
+                  <h3 className="text-xl font-semibold text-[#3C3228]-800 mb-4 flex items-center">
                     <AlertTriangle className="mr-2" size={20} />
                     Ongoing Challenges
                   </h3>
@@ -334,7 +334,7 @@ const Conservation = () => {
             {activeModal === "anti-poaching" && (
               <>
                 <div className="mb-10">
-                  <h3 className="text-xl font-semibold text-emerald-800 mb-5 flex items-center">
+                  <h3 className="text-xl font-semibold text-[#3C3228]-800 mb-5 flex items-center">
                     <Users className="mr-2" size={20} />
                     Protection Teams
                   </h3>
@@ -346,7 +346,7 @@ const Conservation = () => {
                 
                 <div className="grid md:grid-cols-2 gap-8 mb-10">
                   <div>
-                    <h3 className="text-xl font-semibold text-emerald-800 mb-4 flex items-center">
+                    <h3 className="text-xl font-semibold text-[#3C3228]-800 mb-4 flex items-center">
                       <Shield className="mr-2" size={20} />
                       Technology Deployed
                     </h3>
@@ -358,7 +358,7 @@ const Conservation = () => {
                   </div>
                   
                   <div>
-                    <h3 className="text-xl font-semibold text-emerald-800 mb-4 flex items-center">
+                    <h3 className="text-xl font-semibold text-[#3C3228]-800 mb-4 flex items-center">
                       <MapPin className="mr-2" size={20} />
                       Infrastructure
                     </h3>
@@ -370,23 +370,23 @@ const Conservation = () => {
                   </div>
                 </div>
                 
-                <div className="mb-10 bg-emerald-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-emerald-800 mb-5 flex items-center">
+                <div className="mb-10 bg-[#f5ebe0] p-6 rounded-lg">
+                  <h3 className="text-xl font-semibold text-[#3C3228]-800 mb-5 flex items-center">
                     <Award className="mr-2" size={20} />
                     Protection Impact
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
-                      <div className="text-emerald-600 font-medium text-sm mb-1">Poaching Decline</div>
-                      <div className="text-2xl font-bold text-emerald-900">{activeContent.impact.poachingDecline}</div>
+                      <div className="text-[#3C3228]-600 font-medium text-sm mb-1">Poaching Decline</div>
+                      <div className="text-2xl font-bold text-[#3C3228]-900">{activeContent.impact.poachingDecline}</div>
                     </div>
                     <div className="bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
-                      <div className="text-emerald-600 font-medium text-sm mb-1">Preventive Arrests</div>
-                      <div className="text-2xl font-bold text-emerald-900">{activeContent.impact.arrests}</div>
+                      <div className="text-[#3C3228]-600 font-medium text-sm mb-1">Preventive Arrests</div>
+                      <div className="text-2xl font-bold text-[#3C3228]-900">{activeContent.impact.arrests}</div>
                     </div>
                     <div className="bg-white p-4 rounded-lg shadow-sm text-center border border-gray-100">
-                      <div className="text-emerald-600 font-medium text-sm mb-1">Threats Neutralized</div>
-                      <div className="text-2xl font-bold text-emerald-900">{activeContent.impact.intelligence}</div>
+                      <div className="text-[#3C3228]-600 font-medium text-sm mb-1">Threats Neutralized</div>
+                      <div className="text-2xl font-bold text-[#3C3228]-900">{activeContent.impact.intelligence}</div>
                     </div>
                   </div>
                 </div>
@@ -396,7 +396,7 @@ const Conservation = () => {
             {activeModal === "community" && (
               <>
                 <div className="mb-10">
-                  <h3 className="text-xl font-semibold text-emerald-800 mb-5 flex items-center">
+                  <h3 className="text-xl font-semibold text-[#3C3228]-800 mb-5 flex items-center">
                     <Users className="mr-2" size={20} />
                     Community Programs
                   </h3>
@@ -406,32 +406,32 @@ const Conservation = () => {
                   ))}
                 </div>
                 
-                <div className="mb-10 bg-emerald-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-emerald-800 mb-5 flex items-center">
+                <div className="mb-10 bg-[#f5ebe0] p-6 rounded-lg">
+                  <h3 className="text-xl font-semibold text-[#3C3228]-800 mb-5 flex items-center">
                     <BookOpen className="mr-2" size={20} />
                     Education Initiatives
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-                      <div className="text-emerald-600 font-medium text-sm mb-1">Conservation Schools</div>
+                      <div className="text-[#3C3228]-600 font-medium text-sm mb-1">Conservation Schools</div>
                       <div className="text-gray-700">{activeContent.education.schools}</div>
                     </div>
                     <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-                      <div className="text-emerald-600 font-medium text-sm mb-1">Scholarships</div>
+                      <div className="text-[#3C3228]-600 font-medium text-sm mb-1">Scholarships</div>
                       <div className="text-gray-700">{activeContent.education.scholarships}</div>
                     </div>
                     <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-                      <div className="text-emerald-600 font-medium text-sm mb-1">Awareness Programs</div>
+                      <div className="text-[#3C3228]-600 font-medium text-sm mb-1">Awareness Programs</div>
                       <div className="text-gray-700">{activeContent.education.awareness}</div>
                     </div>
                     <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-                      <div className="text-emerald-600 font-medium text-sm mb-1">Skills Training</div>
+                      <div className="text-[#3C3228]-600 font-medium text-sm mb-1">Skills Training</div>
                       <div className="text-gray-700">{activeContent.education.training}</div>
                     </div>
                   </div>
                 </div>
                 
-                <blockquote className="mb-10 bg-emerald-50 p-6 rounded-lg border-l-4 border-emerald-600 italic text-gray-700">
+                <blockquote className="mb-10 bg-[#f5ebe0] p-6 rounded-lg border-l-4 border-emerald-600 italic text-gray-700">
                   "{activeContent.testimonial.quote}"
                   <footer className="mt-2 text-sm text-gray-600 font-semibold">
                     — {activeContent.testimonial.name}, {activeContent.testimonial.role}
@@ -442,14 +442,14 @@ const Conservation = () => {
             
             {/* Common resources section for all modals */}
             <div className="mb-10">
-              <h3 className="text-xl font-semibold text-emerald-800 mb-4 flex items-center">
+              <h3 className="text-xl font-semibold text-[#3C3228]-800 mb-4 flex items-center">
                 <BookOpen className="mr-2" size={20} />
                 Resources & Information
               </h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {activeContent.resources.map((resource, index) => (
                   <li key={index}>
-                    <a href={resource.url} className="flex items-center text-emerald-700 hover:text-emerald-900 transition-colors group">
+                    <a href={resource.url} className="flex items-center text-[#3C3228]-700 hover:text-[#3C3228]-900 transition-colors group">
                       <ExternalLink className="mr-2 group-hover:translate-x-1 transition-transform" size={16} />
                       <span className="underline underline-offset-2">{resource.title}</span>
                     </a>
@@ -468,7 +468,7 @@ const Conservation = () => {
               
               <a 
                 href="#support" 
-                className="w-full sm:w-auto px-6 py-3 bg-emerald-700 text-white rounded-lg hover:bg-emerald-800 transition-colors flex items-center justify-center font-medium"
+                className="w-full sm:w-auto px-6 py-3 bg-[#f5ebe0] text-[#2b2d42] rounded-lg hover:bg-[#f5ebe0] transition-colors flex items-center justify-center font-medium"
                 onClick={closeModal}
               >
                 <Heart className="mr-2" size={18} />
@@ -482,12 +482,12 @@ const Conservation = () => {
   };
 
   return (
-    <section id="conservation" className="py-24 bg-gradient-to-b from-emerald-50 to-white">
+    <section id="conservation" className="py-24 bg-[#f5ebe0] from-emerald-50 to-white">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-emerald-800 inline-block relative mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#3C3228]-800 inline-block relative mb-4">
             Conservation Initiatives
-            <span className="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-emerald-600 rounded-full"></span>
+            <span className="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-[#f5ebe0] rounded-full"></span>
           </h2>
           <p className="mt-4 text-gray-600 max-w-3xl mx-auto text-lg">
             Ranthambore's success story is a testament to dedicated conservation efforts and community involvement. 
@@ -512,7 +512,7 @@ const Conservation = () => {
               />
             </div>
             <div className="md:w-3/5 p-8 lg:p-10">
-              <h3 className="text-2xl font-bold text-emerald-800 mb-4">A Conservation Success Story</h3>
+              <h3 className="text-2xl font-bold text-[#3C3228]-800 mb-4">A Conservation Success Story</h3>
               <p className="text-gray-700 mb-4 leading-relaxed">
                 In the 1970s, Ranthambore's tiger population was dwindling due to hunting and habitat loss. 
                 Through determined conservation efforts, strict anti-poaching measures, and community involvement, 
@@ -524,23 +524,23 @@ const Conservation = () => {
                 restored the entire ecosystem, benefiting all species that call it home.
               </p>
               
-              <div className="bg-emerald-50 p-5 rounded-lg mb-6">
-                <h4 className="font-semibold text-emerald-800 mb-3">Key Achievements:</h4>
+              <div className="bg-[#f5ebe0] p-5 rounded-lg mb-6">
+                <h4 className="font-semibold text-[#3C3228]-800 mb-3">Key Achievements:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-start">
-                    <Check className="mr-2 text-emerald-600 flex-shrink-0 mt-1" size={16} />
+                    <Check className="mr-2 text-[#3C3228]-600 flex-shrink-0 mt-1" size={16} />
                     <span className="text-gray-700">Tiger population increased from 14 in 1990 to over 70 today</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="mr-2 text-emerald-600 flex-shrink-0 mt-1" size={16} />
+                    <Check className="mr-2 text-[#3C3228]-600 flex-shrink-0 mt-1" size={16} />
                     <span className="text-gray-700">Successful relocation of tigers to repopulate other reserves</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="mr-2 text-emerald-600 flex-shrink-0 mt-1" size={16} />
+                    <Check className="mr-2 text-[#3C3228]-600 flex-shrink-0 mt-1" size={16} />
                     <span className="text-gray-700">Creation of buffer zones to reduce human-wildlife conflict</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="mr-2 text-emerald-600 flex-shrink-0 mt-1" size={16} />
+                    <Check className="mr-2 text-[#3C3228]-600 flex-shrink-0 mt-1" size={16} />
                     <span className="text-gray-700">Development of sustainable eco-tourism model</span>
                   </li>
                 </ul>
@@ -548,7 +548,7 @@ const Conservation = () => {
               
               <a 
                 href="#support" 
-                className="inline-block px-6 py-3 bg-emerald-700 text-white font-medium rounded-lg hover:bg-emerald-800 transition-colors shadow-sm"
+                className="inline-block px-6 py-3 bg-[#f5ebe0] text-[#2b2d42] font-bold rounded-lg hover:bg-[#f5ebe0] transition-colors shadow-sm"
               >
                 Support Conservation
               </a>

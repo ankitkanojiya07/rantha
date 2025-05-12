@@ -203,15 +203,15 @@ const Gallery: React.FC = () => {
   const activeImage = filteredImages[activeImageIndex];
 
   return (
-    <section id="gallery" className="py-24 bg-[#d1fae5]">
+    <section id="gallery" className="py-24 bg-[#F8F5F0] font-serif">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header with improved typography */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#2A4010] mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#3C3228] mb-4">
             Ranthambore Gallery
           </h2>
-          <div className="h-1 w-24 bg-[#f5eed] mx-auto mb-6"></div>
-          <p className="mt-4 text-gray-600 max-w-3xl mx-auto text-lg">
+          <div className="h-1 w-24 bg-[#C4B6A6] mx-auto mb-6"></div>
+          <p className="mt-4 text-[#5C5248] max-w-3xl mx-auto text-lg">
             Discover the breathtaking beauty of Ranthambore National Park through our curated collection of 
             premium wildlife and landscape photography captured by renowned professionals.
           </p>
@@ -226,8 +226,8 @@ const Gallery: React.FC = () => {
                 aria-label={`Filter by ${category.name}`}
                 className={`px-6 py-3 rounded-md text-base font-medium transition-all duration-300 shadow-sm ${
                   activeCategory === category.id
-                    ? 'bg-[#] text-white ring-2 ring-offset-2 ring-[#2A4010]'
-                    : 'bg-white text-[#2A4010] hover:bg-[#BBB157] hover:text-white'
+                    ? 'bg-[#997B66] text-white ring-2 ring-offset-2 ring-[#997B66]'
+                    : 'bg-white text-[#3C3228] hover:bg-[#E5DED3] hover:text-[#3C3228]'
                 }`}
                 onClick={() => setActiveCategory(category.id)}
               >
@@ -240,7 +240,7 @@ const Gallery: React.FC = () => {
         {/* Loading State */}
         {isLoading ? (
           <div className="flex justify-center items-center h-64">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#2A4010]"></div>
+            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#997B66]"></div>
           </div>
         ) : (
           <>
@@ -263,7 +263,7 @@ const Gallery: React.FC = () => {
                     onClick={() => openLightbox(index)}
                   >
                     <div className="absolute bottom-0 left-0 right-0 p-5 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <p className="text-[#BBB157] text-sm font-medium mb-1">{image.category.charAt(0).toUpperCase() + image.category.slice(1)}</p>
+                      <p className="text-[#E5DED3] text-sm font-medium mb-1">{image.category.charAt(0).toUpperCase() + image.category.slice(1)}</p>
                       <h3 className="text-xl font-bold text-white mb-1">{image.title}</h3>
                       <div className="flex items-center text-gray-300 text-sm">
                         <Camera size={14} className="mr-1" />
@@ -276,7 +276,7 @@ const Gallery: React.FC = () => {
                     onClick={() => openLightbox(index)}
                     aria-label="View larger image"
                   >
-                    <svg className="w-5 h-5 text-[#2A4010]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-5 h-5 text-[#997B66]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                     </svg>
                   </button>
@@ -287,11 +287,11 @@ const Gallery: React.FC = () => {
             {/* Empty state when no images match the filter */}
             {filteredImages.length === 0 && (
               <div className="text-center py-16">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
-                  <Camera size={32} className="text-gray-400" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#F2EDE4] mb-4">
+                  <Camera size={32} className="text-[#997B66]" />
                 </div>
-                <h3 className="text-xl font-medium text-gray-900">No images found</h3>
-                <p className="mt-2 text-gray-500">There are no images in this category yet.</p>
+                <h3 className="text-xl font-medium text-[#3C3228]">No images found</h3>
+                <p className="mt-2 text-[#5C5248]">There are no images in this category yet.</p>
               </div>
             )}
           </>
@@ -300,76 +300,76 @@ const Gallery: React.FC = () => {
         {/* Photography Tips Section with improved layout */}
         <div className="mt-20 bg-white p-8 md:p-10 rounded-lg shadow-lg border border-gray-100">
           <div className="flex items-center mb-6">
-            <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#2A4010]/10 mr-4">
-              <Camera size={24} className="text-[#2A4010]" />
+            <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#F2EDE4] mr-4">
+              <Camera size={24} className="text-[#997B66]" />
             </div>
-            <h3 className="text-2xl font-bold text-[#2A4010]">Photography Tips from Our Experts</h3>
+            <h3 className="text-2xl font-bold text-[#3C3228]">Photography Tips from Our Experts</h3>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
             <div>
-              <h4 className="font-semibold text-gray-900 mb-4">Equipment & Technique</h4>
+              <h4 className="font-semibold text-[#3C3228] mb-4">Equipment & Technique</h4>
               <ul className="space-y-4">
                 <li className="flex">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#BBB157]/20 flex items-center justify-center mr-3 mt-0.5">
-                    <div className="h-2 w-2 rounded-full bg-[#BBB157]"></div>
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#F2EDE4] flex items-center justify-center mr-3 mt-0.5">
+                    <div className="h-2 w-2 rounded-full bg-[#997B66]"></div>
                   </div>
-                  <p className="text-gray-700">Use telephoto lenses (400mm+) with image stabilization for wildlife photography.</p>
+                  <p className="text-[#5C5248]">Use telephoto lenses (400mm+) with image stabilization for wildlife photography.</p>
                 </li>
                 <li className="flex">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#BBB157]/20 flex items-center justify-center mr-3 mt-0.5">
-                    <div className="h-2 w-2 rounded-full bg-[#BBB157]"></div>
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#F2EDE4] flex items-center justify-center mr-3 mt-0.5">
+                    <div className="h-2 w-2 rounded-full bg-[#997B66]"></div>
                   </div>
-                  <p className="text-gray-700">Shoot in RAW format with fast memory cards for better post-processing flexibility.</p>
+                  <p className="text-[#5C5248]">Shoot in RAW format with fast memory cards for better post-processing flexibility.</p>
                 </li>
                 <li className="flex">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#BBB157]/20 flex items-center justify-center mr-3 mt-0.5">
-                    <div className="h-2 w-2 rounded-full bg-[#BBB157]"></div>
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#F2EDE4] flex items-center justify-center mr-3 mt-0.5">
+                    <div className="h-2 w-2 rounded-full bg-[#997B66]"></div>
                   </div>
-                  <p className="text-gray-700">Set your camera to burst mode (8+ fps) for capturing fast-moving wildlife action.</p>
+                  <p className="text-[#5C5248]">Set your camera to burst mode (8+ fps) for capturing fast-moving wildlife action.</p>
                 </li>
                 <li className="flex">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#BBB157]/20 flex items-center justify-center mr-3 mt-0.5">
-                    <div className="h-2 w-2 rounded-full bg-[#BBB157]"></div>
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#F2EDE4] flex items-center justify-center mr-3 mt-0.5">
+                    <div className="h-2 w-2 rounded-full bg-[#997B66]"></div>
                   </div>
-                  <p className="text-gray-700">Use a bean bag or monopod for stability when shooting from safari vehicles.</p>
+                  <p className="text-[#5C5248]">Use a bean bag or monopod for stability when shooting from safari vehicles.</p>
                 </li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold text-gray-900 mb-4">Composition & Ethics</h4>
+              <h4 className="font-semibold text-[#3C3228] mb-4">Composition & Ethics</h4>
               <ul className="space-y-4">
                 <li className="flex">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#BBB157]/20 flex items-center justify-center mr-3 mt-0.5">
-                    <div className="h-2 w-2 rounded-full bg-[#BBB157]"></div>
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#F2EDE4] flex items-center justify-center mr-3 mt-0.5">
+                    <div className="h-2 w-2 rounded-full bg-[#997B66]"></div>
                   </div>
-                  <p className="text-gray-700">Early morning (6-8am) and golden hour (4-6pm) offer magical lighting conditions.</p>
+                  <p className="text-[#5C5248]">Early morning (6-8am) and golden hour (4-6pm) offer magical lighting conditions.</p>
                 </li>
                 <li className="flex">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#BBB157]/20 flex items-center justify-center mr-3 mt-0.5">
-                    <div className="h-2 w-2 rounded-full bg-[#BBB157]"></div>
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#F2EDE4] flex items-center justify-center mr-3 mt-0.5">
+                    <div className="h-2 w-2 rounded-full bg-[#997B66]"></div>
                   </div>
-                  <p className="text-gray-700">Respect wildlife by maintaining distance and using silent shutter modes.</p>
+                  <p className="text-[#5C5248]">Respect wildlife by maintaining distance and using silent shutter modes.</p>
                 </li>
                 <li className="flex">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#BBB157]/20 flex items-center justify-center mr-3 mt-0.5">
-                    <div className="h-2 w-2 rounded-full bg-[#BBB157]"></div>
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#F2EDE4] flex items-center justify-center mr-3 mt-0.5">
+                    <div className="h-2 w-2 rounded-full bg-[#997B66]"></div>
                   </div>
-                  <p className="text-gray-700">Consider the rule of thirds and include environmental context for storytelling.</p>
+                  <p className="text-[#5C5248]">Consider the rule of thirds and include environmental context for storytelling.</p>
                 </li>
                 <li className="flex">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#BBB157]/20 flex items-center justify-center mr-3 mt-0.5">
-                    <div className="h-2 w-2 rounded-full bg-[#BBB157]"></div>
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#F2EDE4] flex items-center justify-center mr-3 mt-0.5">
+                    <div className="h-2 w-2 rounded-full bg-[#997B66]"></div>
                   </div>
-                  <p className="text-gray-700">Join our annual wildlife photography workshop and contest held each October.</p>
+                  <p className="text-[#5C5248]">Join our annual wildlife photography workshop and contest held each October.</p>
                 </li>
               </ul>
             </div>
           </div>
           
           <div className="mt-8 pt-6 border-t border-gray-100">
-            <p className="text-gray-600 italic">
+            <p className="text-[#5C5248] italic">
               "The best wildlife photographs tell a story about the animal in its natural habitat. Patience is your greatest asset."
               <span className="font-medium block mt-1">- Aditya Singh, Chief Wildlife Photographer</span>
             </p>
@@ -377,84 +377,97 @@ const Gallery: React.FC = () => {
         </div>
       </div>
 
-      {/* Enhanced Lightbox with navigation */}
+     {/* Enhanced Lightbox with navigation */}
       {isLightboxOpen && activeImage && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4"
-          onClick={closeLightbox}
-        >
+        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex justify-center items-center p-4">
           <div 
-            className="max-w-6xl w-full bg-white rounded-lg overflow-hidden shadow-2xl relative"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Lightbox Header */}
-            <div className="bg-[#2A4010] text-white px-6 py-4 flex justify-between items-center">
-              <h3 className="text-xl font-bold">{activeImage.title}</h3>
-              <button 
-                className="p-2 hover:bg-white/10 rounded-full transition-colors"
-                onClick={closeLightbox}
-                aria-label="Close lightbox"
-              >
-                <X size={20} />
-              </button>
-            </div>
-            
+            className="absolute inset-0 z-0"
+            onClick={closeLightbox}
+            aria-label="Close lightbox"
+          ></div>
+          
+          <div className="relative z-10 max-w-6xl w-full mx-auto bg-[#F9F6F1] rounded-lg overflow-hidden shadow-2xl flex flex-col md:flex-row">
             {/* Image Container */}
-            <div className="relative bg-black flex items-center justify-center">
-              <img 
-                src={activeImage.src} 
-                alt={activeImage.title}
-                className="max-h-[70vh] w-auto object-contain"
-              />
+            <div className="w-full md:w-2/3 bg-black relative">
+              <div className="relative h-[50vh] md:h-[80vh] flex items-center justify-center">
+                <img 
+                  src={activeImage.src} 
+                  alt={activeImage.title}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
               
               {/* Navigation Buttons */}
               <button 
-                className="absolute left-4 p-3 bg-black/40 text-white rounded-full hover:bg-black/60 transition-colors"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  goToPrevious();
-                }}
+                className="absolute top-1/2 left-4 -translate-y-1/2 p-2 rounded-full bg-[#F9F6F1]/70 hover:bg-[#F9F6F1] transition-colors duration-300 shadow-md"
+                onClick={goToPrevious}
                 aria-label="Previous image"
               >
-                <ChevronLeft size={24} />
+                <ChevronLeft className="h-6 w-6 text-[#3D3026]" />
               </button>
               
               <button 
-                className="absolute right-4 p-3 bg-black/40 text-white rounded-full hover:bg-black/60 transition-colors"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  goToNext();
-                }}
+                className="absolute top-1/2 right-4 -translate-y-1/2 p-2 rounded-full bg-[#F9F6F1]/70 hover:bg-[#F9F6F1] transition-colors duration-300 shadow-md"
+                onClick={goToNext}
                 aria-label="Next image"
               >
-                <ChevronRight size={24} />
+                <ChevronRight className="h-6 w-6 text-[#3D3026]" />
               </button>
             </div>
             
-            {/* Image Details */}
-            <div className="p-6">
-              <div className="flex flex-wrap items-center gap-4 mb-4 text-sm text-gray-500">
-                <div className="flex items-center">
-                  <Camera size={16} className="mr-2" />
-                  <span>{activeImage.photographer}</span>
+            {/* Details Panel */}
+            <div className="w-full md:w-1/3 p-6 md:p-8 relative font-['Lora',serif]">
+              <button 
+                className="absolute top-4 right-4 p-1 rounded-full hover:bg-[#E9E4DC] transition-colors duration-300"
+                onClick={closeLightbox}
+                aria-label="Close lightbox"
+              >
+                <X className="h-6 w-6 text-[#3D3026]" />
+              </button>
+              
+              <div className="mb-4">
+                <p className="text-[#7D6E5B] uppercase tracking-wider text-sm font-medium">
+                  {activeImage.category.charAt(0).toUpperCase() + activeImage.category.slice(1)}
+                </p>
+                <h3 className="text-2xl font-bold mt-1 text-[#3D3026]">{activeImage.title}</h3>
+              </div>
+              
+              <p className="text-[#3D3026]/80 mb-6 leading-relaxed">{activeImage.description}</p>
+              
+              <div className="pt-6 border-t border-[#E9E4DC] space-y-3">
+                <div className="flex items-start">
+                  <div className="w-24 flex-shrink-0 text-[#7D6E5B] font-medium">Photographer</div>
+                  <div className="text-[#3D3026]">{activeImage.photographer}</div>
                 </div>
-                <div>
-                  <span>Category: {activeImage.category.charAt(0).toUpperCase() + activeImage.category.slice(1)}</span>
-                </div>
-                <div>
-                  <span>Taken: {activeImage.dateTaken}</span>
+                <div className="flex items-start">
+                  <div className="w-24 flex-shrink-0 text-[#7D6E5B] font-medium">Date</div>
+                  <div className="text-[#3D3026]">{activeImage.dateTaken}</div>
                 </div>
               </div>
-              <p className="text-gray-700 leading-relaxed">{activeImage.description}</p>
               
-              {/* Counter */}
-              <div className="text-center mt-4 text-sm text-gray-500">
-                Image {activeImageIndex + 1} of {filteredImages.length}
+              <div className="mt-8 pt-6 border-t border-[#E9E4DC]">
+                <div className="flex items-center gap-x-4">
+                  <p className="text-[#7D6E5B] font-medium">Image {activeImageIndex + 1} of {filteredImages.length}</p>
+                  <div className="flex-1 h-1 bg-[#E9E4DC] rounded-full overflow-hidden">
+                    <div 
+                      className="h-full bg-[#7D6E5B]" 
+                      style={{ width: `${((activeImageIndex + 1) / filteredImages.length) * 100}%` }}
+                    ></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       )}
+      
+      {/* Attribution */}
+      {/* <div className="mt-16 text-center text-[#7D6E5B] text-sm font-['Lora',serif]">
+        <p>&copy; {new Date().getFullYear()} Ranthambore National Park Gallery. All rights reserved.</p>
+        <p className="mt-1">
+          Images contributed by our network of professional wildlife photographers.
+        </p>
+      </div> */}
     </section>
   );
 };

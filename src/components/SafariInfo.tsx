@@ -358,7 +358,7 @@ const SafariInfo: React.FC = () => {
                 </p>
                 <a 
                   href="#booking" 
-                  className="inline-flex items-center px-6 py-3 bg-amber-400 text-green-900 font-bold rounded-full hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="inline-flex items-center px-6 py-3 bg-[#f5ebe0] text-[#3C3228] font-bold rounded-full hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500"
                 >
                   Book Your Safari
                   <ChevronRight size={18} className="ml-1" />

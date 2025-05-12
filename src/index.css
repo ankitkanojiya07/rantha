@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Primary Colors */
+  --color-primary: #2C2417;      /* Deep brown */
+  --color-secondary: #8B7355;    /* Earth brown */
+  --color-accent: #594D3C;       /* Warm brown */
+  
+  /* Background Colors */
+  --color-background: #FCFBF8;   /* Cream white */
+  --color-surface: #F5F1EA;      /* Light beige */
+  --color-surface-alt: #E9E5DC;  /* Warm beige */
+  
+  /* Text Colors */
+  --color-text-primary: #3A3229; /* Rich brown */
+  --color-text-secondary: #594D3C; /* Warm brown */
+  --color-text-light: #D4C9B9;   /* Light beige */
+  
+  /* Border Colors */
+  --color-border: #D4C9B9;       /* Light beige */
+  --color-border-dark: #8B7355;  /* Earth brown */
+}
+
 @layer base {
   html, body {
     scroll-behavior: smooth;
@@ -9,40 +34,113 @@
   }
   
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    font-weight: 300;
+    line-height: 1.75;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Cormorant', serif;
+    color: var(--color-primary);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: 2rem;
   }
 }
 
-/* Custom animations */
-.animate-fade-in {
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
+/* Typography Classes */
+.heading-serif {
+  font-family: 'Cormorant', serif;
 }
 
-/* Add a subtle pattern background */
-.bg-pattern {
-  background-color: #f0f2e3;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232a4010' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+.body-sans {
+  font-family: 'Montserrat', sans-serif;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
+.text-small {
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+.text-tiny {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #BBB157;
-  border-radius: 5px;
+/* Button Styles */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: all 300ms;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #2A4010;
+.btn-primary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+/* Card Styles */
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--color-border);
+}
+
+/* Container Styles */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 80rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }

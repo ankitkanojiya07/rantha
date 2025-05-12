@@ -547,7 +547,7 @@ const Wildlife: React.FC = () => {
             </div>
 
             {/* Safari Season Selector */}
-            <div className="bg-[#F0F2E3] rounded-lg shadow-lg p-8 mb-16">
+            <div className="bg-[#f5ebe0] rounded-lg shadow-lg p-8 mb-16">
               <h3 className="text-2xl font-bold text-center text-[#2A4010] mb-6">Best Times to Visit</h3>
               <p className="text-gray-600 text-center mb-8">
                 Select a season to discover the unique wildlife experiences each time of year offers
@@ -594,8 +594,8 @@ const Wildlife: React.FC = () => {
 
            {/* Safari Tips Section */}
            {/* Safari Insider Tips Component with matching styling */}
-<div className="bg-[#F0F2E3] rounded-lg shadow-lg p-8 mb-16">
-  <h3 className="text-2xl font-bold text-center text-[#2A4010] mb-6">Safari Insider Tips</h3>
+<div className="bg-[#f5ebe0] rounded-lg shadow-lg p-8 mb-16">
+  <h3 className="text-2xl font-bold text-center text-[#2b2d42] mb-6">Safari Insider Tips</h3>
   <p className="text-gray-600 text-center mb-8">
     Essential guidance to make the most of your wildlife adventure in Ranthambore
   </p>
@@ -615,14 +615,14 @@ const Wildlife: React.FC = () => {
                 <p className="italic font-medium text-lg mb-6">
                   "The true joy of Ranthambore lies in its unpredictability — each visit reveals a new chapter in the jungle's ever-unfolding story."
                 </p>
-                <a href="#booking" className="inline-block px-6 py-3 bg-[#BBB157] text-[#2A4010] font-bold rounded-lg shadow-md hover:bg-[#D0D68F] transition-colors">
+                <a href="#booking" className="inline-block px-6 py-3 bg-[#3C3228] text-[#f5ebe0]  font-bold rounded-lg shadow-md hover:bg-[#D0D68F] transition-colors">
                   Book Your Safari Experience
                 </a>
               </div>
             </div>
 
             {/* Flora and Fauna Section with Interactive Cards */}
-            <div className="bg-[#F0F2E3] rounded-lg p-8 mb-16">
+            <div className="bg-[#f5ebe0] rounded-lg p-8 mb-16">
               <div className="flex flex-col md:flex-row gap-8 items-center mb-8">
                 <div className="md:w-1/2">
                   <div 

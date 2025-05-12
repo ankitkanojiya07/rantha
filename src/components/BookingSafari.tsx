@@ -58,13 +58,13 @@ const BookingSafari: React.FC = () => {
   };
 
   return (
-    <section id="booking" className="py-20 bg-[#E8DDC2]">
+    <section id="booking" className="py-20 bg-[var(--color-surface)]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#451A03] inline-block border-b-4 border-[#451A03] pb-2">
+          <h2 className="heading-serif text-3xl md:text-4xl font-bold text-[var(--color-primary)] inline-block border-b-4 border-[var(--color-secondary)] pb-2">
             Book Your Safari
           </h2>
-          <p className="mt-4 text-gray-600 max-w-3xl mx-auto text-[#451A03]">
+          <p className="mt-4 text-[var(--color-text-secondary)] max-w-3xl mx-auto body-sans">
             Reserve your spot for an unforgettable wildlife adventure in Ranthambore National Park.
             Early booking is recommended, especially during peak season.
           </p>
@@ -72,7 +72,7 @@ const BookingSafari: React.FC = () => {
 
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-lg shadow-xl overflow-hidden">
-            <div className="h-16 bg-[#f5eedd]"></div>
+            <div className="h-16 bg-[var(--color-surface-alt)]"></div>
             <div className="px-6 py-8 md:p-10">
               {submitted ? (
                 <div className="text-center py-8">
@@ -204,9 +204,9 @@ const BookingSafari: React.FC = () => {
             </div>
           </div>
           
-          <div className="mt-8 bg-[#B45309] text-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-bold mb-3">Important Booking Information</h3>
-            <ul className="list-disc pl-5 space-y-2">
+          <div className="mt-8 bg-[var(--color-primary)] text-[var(--color-surface)] p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-bold mb-3 heading-serif">Important Booking Information</h3>
+            <ul className="list-disc pl-5 space-y-2 body-sans">
               <li>Bookings should be made at least 90 days in advance for the best chances of securing your preferred slot.</li>
               <li>A valid government-issued photo ID is required for all visitors entering the park.</li>
               <li>Children below 5 years of age are not recommended for safaris.</li>

@@ -124,7 +124,7 @@ const ZONE_DATA: Record<ZoneId, ZoneData> = {
 // Separate subcomponents for better organization
 const ZoneHighlight: React.FC<{ text: string }> = ({ text }) => (
   <li className="flex items-start">
-    <span className="text-teal-500 mr-2">•</span>
+    <span className="text-[#2b2d42] mr-2">•</span>
     <span>{text}</span>
   </li>
 );
@@ -135,7 +135,7 @@ const DetailInfoCard: React.FC<{ icon: React.ReactNode; title: string; children:
   children 
 }) => (
   <div className="bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-100">
-    <h3 className="text-xl font-bold text-teal-800 mb-4 flex items-center">
+    <h3 className="text-xl font-bold text-[#2b2d42] mb-4 flex items-center">
       {icon}
       {title}
     </h3>
@@ -144,7 +144,7 @@ const DetailInfoCard: React.FC<{ icon: React.ReactNode; title: string; children:
 );
 
 const WildlifeTag: React.FC<{ name: string }> = ({ name }) => (
-  <span className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">
+  <span className=" bg-[#f5ebe0] text-[#2b2d42] px-3 py-1 rounded-full text-sm font-medium">
     {name}
   </span>
 );
@@ -175,19 +175,19 @@ const ZoneDetailModal: React.FC<{
         </div>
         
         <div className="p-8">
-          <h2 className="text-3xl font-bold text-teal-800 mb-2">{zone.name}</h2>
+          <h2 className="text-3xl font-bold text-[#2b2d42] mb-2">{zone.name}</h2>
           <p className="text-gray-600 mb-8 text-lg">{zone.description}</p>
           
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <DetailInfoCard 
-              icon={<Clock className="mr-2 text-teal-600" size={20} />} 
+              icon={<Clock className="mr-2 text-[#2b2d42]" size={20} />} 
               title="Best Time to Visit"
             >
               <p className="text-gray-700">{zone.detailedInfo.bestTime}</p>
             </DetailInfoCard>
             
             <DetailInfoCard 
-              icon={<Calendar className="mr-2 text-teal-600" size={20} />} 
+              icon={<Calendar className="mr-2 text-[#2b2d42]" size={20} />} 
               title="Duration & Difficulty"
             >
               <p className="text-gray-700">
@@ -198,7 +198,7 @@ const ZoneDetailModal: React.FC<{
           </div>
           
           <DetailInfoCard 
-            icon={<Award className="mr-2 text-teal-600" size={20} />} 
+            icon={<Award className="mr-2 text-[#2b2d42]" size={20} />} 
             title="Wildlife Highlights"
           >
             <div className="flex flex-wrap gap-2">
@@ -210,7 +210,7 @@ const ZoneDetailModal: React.FC<{
           
           <div className="mt-6">
             <DetailInfoCard 
-              icon={<Camera className="mr-2 text-teal-600" size={20} />} 
+              icon={<Camera className="mr-2 text-[#2b2d42]" size={20} />} 
               title="Photography"
             >
               <p className="text-gray-700">{zone.detailedInfo.photography}</p>
@@ -219,7 +219,7 @@ const ZoneDetailModal: React.FC<{
           
           <div className="mt-6">
             <DetailInfoCard 
-              icon={<AlertTriangle className="mr-2 text-teal-600" size={20} />} 
+              icon={<AlertTriangle className="mr-2 text-[#2b2d42]" size={20} />} 
               title="Essential Tips"
             >
               <ul className="space-y-2">
@@ -240,7 +240,7 @@ const ZoneDetailModal: React.FC<{
             
             <a 
               href="#booking" 
-              className="px-6 py-3 bg-teal-700 text-white rounded-full hover:bg-teal-800 transition-colors flex items-center focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="px-6 py-3 bg-[#f5ebe0] text-[#2b2d42] rounded-full hover:bg-[#f5ebe0]-800 transition-colors flex items-center focus:outline-none focus:ring-2 focus:ring-teal-500"
               onClick={onClose}
             >
               Book Safari
@@ -271,7 +271,7 @@ const Zones: React.FC = () => {
     <section id="zones" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-teal-800 inline-block border-b-4 border-teal-400 pb-2">
+          <h2 className="text-3xl md:text-4xl font-bold text--800 inline-block border-b-4 border-teal-400 pb-2">
             Explore Park Zones
           </h2>
           <p className="mt-4 text-gray-600 max-w-3xl mx-auto text-lg">
@@ -289,8 +289,8 @@ const Zones: React.FC = () => {
                 key={zone.id}
                 className={`px-6 py-3 rounded-full font-bold mx-2 mb-2 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500 ${
                   activeZone === zone.id 
-                    ? 'bg-teal-700 text-white shadow-md' 
-                    : 'bg-white text-teal-700 hover:bg-teal-100 shadow-sm'
+                    ? 'bg-[#f5ebe0] text-[#2b2d42] shadow-md' 
+                    : 'bg-white text-[#2b2d42] hover:bg-[#f5ebe0]-100 shadow-sm'
                 }`}
                 onClick={() => setActiveZone(zone.id as ZoneId)}
                 aria-pressed={activeZone === zone.id}
@@ -313,11 +313,11 @@ const Zones: React.FC = () => {
               />
             </div>
             <div className="md:w-1/2 p-8">
-              <h3 className="text-2xl font-bold text-teal-800 mb-4">{currentZone.name}</h3>
+              <h3 className="text-2xl font-bold text-[#2b2d42] mb-4">{currentZone.name}</h3>
               <p className="text-gray-700 mb-6 text-lg">{currentZone.description}</p>
               
-              <h4 className="text-lg font-bold text-teal-500 mb-3 flex items-center">
-                <Map className="mr-2 text-teal-600" size={18} />
+              <h4 className="text-lg font-bold text-[#2b2d42] mb-3 flex items-center">
+                <Map className="mr-2 text-[#2b2d42]" size={18} />
                 Zone Highlights Tiger
               </h4>
               <ul className="space-y-2 text-gray-700 mb-8">
@@ -329,7 +329,7 @@ const Zones: React.FC = () => {
               <div className="mt-8">
                 <button 
                   onClick={handleExploreClick}
-                  className="inline-flex items-center px-6 py-3 bg-teal-400 text-teal-900 font-bold rounded-full hover:bg-teal-700 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500"
+                  className="inline-flex items-center px-6 py-3 bg-[#f5ebe0] text-[#2b2d42] font-bold rounded-full hover:bg-[#f5ebe0] hover:text-[#2b2d42]  transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500"
                   aria-label={`Explore ${currentZone.name} in detail`}
                 >
                   Explore {currentZone.name}
@@ -341,7 +341,7 @@ const Zones: React.FC = () => {
         </div>
 
         {/* Pro Tip Section */}
-        <div className="mt-12 bg-teal-700 text-white p-6 rounded-lg shadow-md">
+        <div className="mt-12 bg-[#f5ebe0] text-[#2b2d42] p-6 rounded-lg shadow-md">
           <h4 className="text-xl font-bold mb-3 flex items-center">
             <Award className="mr-2" size={20} />
             Pro Tip
