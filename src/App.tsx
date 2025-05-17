@@ -14,6 +14,7 @@ import Testimonials from './components/Testimonials';
 import EnvironmentalSustainability from './components/sus';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import SightingsUpdate from './components/SightingsUpdate';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -43,7 +44,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-neutral-50 text-gray-800 relative w-full overflow-x-hidden">
+    <div className="bg-background text-foreground relative w-full overflow-x-hidden font-serif">
       <Header activeSection={activeSection} />
       <main>
         <Hero />
@@ -51,6 +52,7 @@ function App() {
         <QuickFacts />
         <Wildlife />
         <Zones />
+        <SightingsUpdate />
         <SafariInfo />
         <BookingSafari />
         <Gallery />

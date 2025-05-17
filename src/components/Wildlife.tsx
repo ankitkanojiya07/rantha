@@ -61,12 +61,10 @@ const Wildlife: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<Species | null>(null);
 
-
-
   const wildlifeCategories: WildlifeCategory[] = [
     {
       title: "Apex Predators",
-      icon: <Footprints className="h-8 w-8 text-[#8B4513]" />,
+      icon: <Footprints className="h-8 w-8 text-[var(--color-primary)]" />,
       species: [
         {
           id: "royal-bengal-tiger",
@@ -88,7 +86,7 @@ const Wildlife: React.FC = () => {
     },
     {
       title: "Other Predators",
-      icon: <Info className="h-8 w-8 text-[#8B4513]" />,
+      icon: <Info className="h-8 w-8 text-[var(--color-primary)]" />,
       species: [
         {
           id: "caracal-hyena",
@@ -118,7 +116,7 @@ const Wildlife: React.FC = () => {
     },
     {
       title: "Avian Biodiversity",
-      icon: <Bird className="h-8 w-8 text-[#8B4513]" />,
+      icon: <Bird className="h-8 w-8 text-[var(--color-primary)]" />,
       species: [
         {
           id: "painted-storks",
@@ -139,7 +137,6 @@ const Wildlife: React.FC = () => {
       ]
     }
   ];
-
 
   // All species combined from categories for search
   const allSpecies: Species[] = wildlifeCategories.flatMap(category => category.species);
@@ -380,41 +377,40 @@ const Wildlife: React.FC = () => {
   const faunaItems = natureItems.filter(item => item.category === 'fauna');
 
   return (
-    <section id="wildlife" className="py-20 bg-neutral-50">
+    <section id="wildlife" className="py-20 bg-[var(--color-background)]">
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#2A4010] inline-block border-b-4 border-[#BBB157] pb-2">
+          <h2 className="text-3xl md:text-5xl font-bold text-[var(--color-text-primary)] inline-block border-b-4 border-[var(--color-accent)] pb-2 heading-serif">
             Wilderness of Ranthambore
           </h2>
-          <p className="mt-6 text-gray-600 max-w-3xl mx-auto text-lg">
+          <p className="mt-6 text-[var(--color-text-secondary)] max-w-3xl mx-auto text-lg body-sans">
             Discover the extraordinary biodiversity that makes Ranthambore National Park a crown jewel of India's natural heritage
           </p>
           
           {/* Search Bar */}
-          <div className="mt-8 max-w-md mx-auto relative">
-            <div className="flex items-center bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
-              <input
-                type="text"
-                placeholder="Search species..."
-                className="w-full py-3 px-4 outline-none"
-                value={searchTerm}
-                onChange={handleSearchChange}
-              />
-              <div className="px-4 text-gray-500">
-                <Search className="h-5 w-5" />
-              </div>
+          <div className="mt-8 max-w-md mx-auto relative">          <div className="flex items-center bg-[var(--color-surface)] rounded-lg shadow-md overflow-hidden border border-[var(--color-border)]">
+            <input
+              type="text"
+              placeholder="Search species..."
+              className="w-full py-3 px-4 outline-none bg-[var(--color-surface)] text-[var(--color-text-primary)]"
+              value={searchTerm}
+              onChange={handleSearchChange}
+            />
+            <div className="px-4 text-[var(--color-text-secondary)]">
+              <Search className="h-5 w-5" />
             </div>
+          </div>
             
             {/* Search Results */}
             {searchTerm.length > 0 && (
-              <div className="absolute z-10 bg-white shadow-lg rounded-lg mt-2 w-full max-h-64 overflow-y-auto">
+              <div className="absolute z-10 bg-[var(--color-surface)] shadow-lg rounded-lg mt-2 w-full max-h-64 overflow-y-auto">
                 {filteredSpecies.length > 0 ? (
-                  <ul className="divide-y divide-gray-100">
+                  <ul className="divide-y divide-[var(--color-border)]">
                     {filteredSpecies.map((species) => (
                       <li 
                         key={species.id} 
-                        className="p-3 hover:bg-gray-50 cursor-pointer flex items-center"
+                        className="p-3 hover:bg-[var(--color-surface-alt)] cursor-pointer flex items-center"
                         onClick={() => {
                           toggleModal(species);
                           setSearchTerm('');
@@ -428,14 +424,14 @@ const Wildlife: React.FC = () => {
                           />
                         </div>
                         <div>
-                          <h4 className="font-semibold text-[#2A4010]">{species.name}</h4>
-                          <p className="text-xs text-gray-500 italic">{species.scientificName}</p>
+                          <h4 className="font-semibold text-[var(--color-text-primary)] heading-serif">{species.name}</h4>
+                          <p className="text-xs text-[var(--color-text-secondary)] italic body-sans">{species.scientificName}</p>
                         </div>
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <div className="p-4 text-center text-gray-500">
+                  <div className="p-4 text-center text-[var(--color-text-secondary)]">
                     No species found matching "{searchTerm}"
                   </div>
                 )}
@@ -446,21 +442,21 @@ const Wildlife: React.FC = () => {
 
         {/* Navigation Tabs */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex bg-white rounded-lg shadow-md p-1">
+          <div className="inline-flex bg-[var(--color-surface)] rounded-lg shadow-md p-1">
             <button 
-              className={`px-4 py-2 font-medium rounded-md transition ${activeTab === 'overview' ? 'bg-[#2A4010] text-white' : 'text-[#2A4010] hover:bg-gray-100'}`}
+              className={`px-4 py-2 font-medium rounded-md transition body-sans ${activeTab === 'overview' ? 'bg-[var(--color-primary)] text-[var(--color-surface)]' : 'text-[var(--color-text-primary)] hover:bg-[var(--color-surface-alt)]'}`}
               onClick={() => setActiveTab('overview')}
             >
               Overview
             </button>
             <button 
-              className={`px-4 py-2 font-medium rounded-md transition ${activeTab === 'species' ? 'bg-[#2A4010] text-white' : 'text-[#2A4010] hover:bg-gray-100'}`}
+              className={`px-4 py-2 font-medium rounded-md transition body-sans ${activeTab === 'species' ? 'bg-[var(--color-primary)] text-[var(--color-surface)]' : 'text-[var(--color-text-primary)] hover:bg-[var(--color-surface-alt)]'}`}
               onClick={() => setActiveTab('species')}
             >
               Species Guide
             </button>
             <button 
-              className={`px-4 py-2 font-medium rounded-md transition ${activeTab === 'conservation' ? 'bg-[#2A4010] text-white' : 'text-[#2A4010] hover:bg-gray-100'}`}
+              className={`px-4 py-2 font-medium rounded-md transition body-sans ${activeTab === 'conservation' ? 'bg-[var(--color-primary)] text-[var(--color-surface)]' : 'text-[var(--color-text-primary)] hover:bg-[var(--color-surface-alt)]'}`}
               onClick={() => setActiveTab('conservation')}
             >
               Conservation
@@ -473,10 +469,9 @@ const Wildlife: React.FC = () => {
           <>
             {/* Main Wildlife Cards - Now Clickable */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-              {wildlifeCards.map((card) => (
-                <div key={card.id} className="relative">
+              {wildlifeCards.map((card) => (                  <div key={card.id} className="relative">
                   <div 
-                    className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all hover:shadow-xl hover:-translate-y-2 cursor-pointer"
+                    className="bg-[var(--color-surface)] rounded-lg shadow-lg overflow-hidden transform transition-all hover:shadow-xl hover:-translate-y-2 cursor-pointer"
                     onClick={() => setExpandedCard(expandedCard === card.id ? null : card.id)}
                   >
                     <div className="h-56 overflow-hidden relative">
@@ -485,41 +480,41 @@ const Wildlife: React.FC = () => {
                         alt={card.title}
                         className="w-full h-full object-cover transition-transform hover:scale-105"
                       />
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[var(--color-background)]/80 to-transparent p-3">
                         <div className="flex flex-wrap gap-2">
                           {card.tags.map((tag, idx) => (
-                            <span key={idx} className="text-xs font-medium bg-white/80 text-[#2A4010] px-2 py-1 rounded-full">
+                            <span key={idx} className="text-xs font-medium bg-[var(--color-surface)]/90 text-[var(--color-text-primary)] px-2 py-1 rounded-full">
                               {tag}
                             </span>
                           ))}
                         </div>
                       </div>
                     </div>
-                    <div className="p-6 border-t-4 border-[#BBB157]">
-                      <h3 className="text-xl font-bold text-[#2A4010] mb-2">{card.title}</h3>
-                      <p className="text-gray-600 mb-4">{card.description}</p>
-                      <div className="inline-flex items-center text-[#2A4010] font-bold relative group">
+                    <div className="p-6 border-t-4 border-[var(--color-accent)]">
+                      <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-2 heading-serif">{card.title}</h3>
+                      <p className="text-[var(--color-text-secondary)] mb-4 body-sans">{card.description}</p>
+                      <div className="inline-flex items-center text-[var(--color-text-primary)] font-bold relative group">
                         {expandedCard === card.id ? "Show Less" : card.linkText}
                         <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${expandedCard === card.id ? 'rotate-180' : ''}`} />
-                        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#BBB157] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[var(--color-accent)] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                       </div>
                     </div>
                   </div>
                   
                   {/* Expanded Content */}
                   {expandedCard === card.id && (
-                    <div className="bg-white rounded-lg shadow-xl p-6 mt-4 border-l-4 border-[#BBB157] relative">
+                    <div className="bg-[var(--color-surface)] rounded-lg shadow-xl p-6 mt-4 border-l-4 border-[var(--color-accent)] relative">
                       <button 
-                        className="absolute top-3 right-3 p-1 bg-[#F0F2E3] rounded-full hover:bg-gray-200 transition-colors"
+                        className="absolute top-3 right-3 p-1 bg-[var(--color-surface-alt)] rounded-full hover:bg-[var(--color-surface-alt)]/80 transition-colors"
                         onClick={(e) => {
                           e.stopPropagation();
                           setExpandedCard(null);
                         }}
                       >
-                        <X className="h-5 w-5 text-[#2A4010]" />
+                        <X className="h-5 w-5 text-[var(--color-text-primary)]" />
                       </button>
-                      <h3 className="text-xl font-bold text-[#2A4010] mb-4">{card.title} - Detailed Information</h3>
-                      <p className="text-gray-600 whitespace-pre-line leading-relaxed">{card.fullContent}</p>
+                      <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-4 heading-serif">{card.title} - Detailed Information</h3>
+                      <p className="text-[var(--color-text-secondary)] whitespace-pre-line leading-relaxed body-sans">{card.fullContent}</p>
                     </div>
                   )}
                 </div>
@@ -527,12 +522,12 @@ const Wildlife: React.FC = () => {
             </div>
 
             {/* Wildlife Census Counter Section */}
-            <div id="wildlife-counters" className="bg-white rounded-lg shadow-lg p-8 mb-16">
-              <h3 className="text-2xl font-bold text-center text-[#2A4010] mb-8">Wildlife Census Highlights</h3>
+            <div id="wildlife-counters" className="bg-[var(--color-surface)] rounded-lg shadow-lg p-8 mb-16">
+              <h3 className="text-2xl font-bold text-center text-[var(--color-text-primary)] mb-8 heading-serif">Wildlife Census Highlights</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {counters.map((counter, index) => (
                   <div key={index} className="text-center">
-                    <div className="text-4xl md:text-5xl font-bold text-[#2A4010] mb-2 flex justify-center items-center">
+                    <div className="text-4xl md:text-5xl font-bold text-[var(--color-primary)] mb-2 flex justify-center items-center">
                       {animateCount ? (
                         <CountUp end={counter.number} duration={2} />
                       ) : (
@@ -540,16 +535,16 @@ const Wildlife: React.FC = () => {
                       )}
                       {counter.symbol}
                     </div>
-                    <div className="text-gray-600">{counter.label}</div>
+                    <div className="text-[var(--color-text-secondary)] body-sans">{counter.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Safari Season Selector */}
-            <div className="bg-[#f5ebe0] rounded-lg shadow-lg p-8 mb-16">
-              <h3 className="text-2xl font-bold text-center text-[#2A4010] mb-6">Best Times to Visit</h3>
-              <p className="text-gray-600 text-center mb-8">
+            <div className="bg-[var(--color-surface-alt)] rounded-lg shadow-lg p-8 mb-16">
+              <h3 className="text-2xl font-bold text-center text-[var(--color-text-primary)] mb-6 heading-serif">Best Times to Visit</h3>
+              <p className="text-[var(--color-text-secondary)] text-center mb-8 body-sans">
                 Select a season to discover the unique wildlife experiences each time of year offers
               </p>
               
@@ -557,10 +552,10 @@ const Wildlife: React.FC = () => {
                 {safariSeasons.map((season) => (
                   <button
                     key={season.season}
-                    className={`px-6 py-3 rounded-lg font-medium transition-all ${
+                    className={`px-6 py-3 rounded-lg font-medium transition-all body-sans ${
                       selectedSeason === season.season 
-                        ? 'bg-[#2A4010] text-white shadow-md' 
-                        : 'bg-white text-[#2A4010] hover:bg-gray-100'
+                        ? 'bg-[var(--color-primary)] text-[var(--color-surface)] shadow-md' 
+                        : 'bg-[var(--color-surface)] text-[var(--color-text-primary)] hover:bg-[var(--color-surface)]/90'
                     }`}
                     onClick={() => setSelectedSeason(selectedSeason === season.season ? null : season.season)}
                   >
@@ -570,20 +565,20 @@ const Wildlife: React.FC = () => {
               </div>
               
               {selectedSeason && (
-                <div className="bg-white rounded-lg p-6 shadow-md">
+                <div className="bg-[var(--color-surface)] rounded-lg p-6 shadow-md">
                   {safariSeasons.filter(s => s.season === selectedSeason).map((season) => (
                     <div key={season.season}>
-                      <h4 className="text-xl font-bold text-[#2A4010] mb-4">
+                      <h4 className="text-xl font-bold text-[var(--color-text-primary)] mb-4 heading-serif">
                         {season.season} Season ({season.months})
                       </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                          <h5 className="font-semibold text-[#2A4010] mb-2">Wildlife Highlights</h5>
-                          <p className="text-gray-600">{season.highlights}</p>
+                          <h5 className="font-semibold text-[var(--color-text-primary)] mb-2 heading-serif">Wildlife Highlights</h5>
+                          <p className="text-[var(--color-text-secondary)] body-sans">{season.highlights}</p>
                         </div>
                         <div>
-                          <h5 className="font-semibold text-[#2A4010] mb-2">Weather Conditions</h5>
-                          <p className="text-gray-600">{season.conditions}</p>
+                          <h5 className="font-semibold text-[var(--color-text-primary)] mb-2 heading-serif">Weather Conditions</h5>
+                          <p className="text-[var(--color-text-secondary)] body-sans">{season.conditions}</p>
                         </div>
                       </div>
                     </div>
@@ -594,56 +589,56 @@ const Wildlife: React.FC = () => {
 
            {/* Safari Tips Section */}
            {/* Safari Insider Tips Component with matching styling */}
-<div className="bg-[#f5ebe0] rounded-lg shadow-lg p-8 mb-16">
-  <h3 className="text-2xl font-bold text-center text-[#2b2d42] mb-6">Safari Insider Tips</h3>
-  <p className="text-gray-600 text-center mb-8">
+<div className="bg-[var(--color-surface-alt)] rounded-lg shadow-lg p-8 mb-16">
+  <h3 className="text-2xl font-bold text-center text-[var(--color-text-primary)] mb-6 heading-serif">Safari Insider Tips</h3>
+  <p className="text-[var(--color-text-secondary)] text-center mb-8 body-sans">
     Essential guidance to make the most of your wildlife adventure in Ranthambore
   </p>
   
   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
     {safariTips.map((tip, index) => (
-      <div key={index} className="flex items-start bg-white p-4 rounded-lg shadow-md">
-        <div className="bg-[#2A4010] p-3 rounded-full text-white mr-4 flex-shrink-0">
+      <div key={index} className="flex items-start bg-[var(--color-surface)] p-4 rounded-lg shadow-md">
+        <div className="bg-[var(--color-primary)] p-3 rounded-full text-[var(--color-surface)] mr-4 flex-shrink-0">
           {tip.icon}
         </div>
-        <p className="text-gray-600">{tip.tip}</p>
+        <p className="text-[var(--color-text-secondary)] body-sans">{tip.tip}</p>
       </div>
     ))}
   </div>
 
               <div className="text-center mt-10">
-                <p className="italic font-medium text-lg mb-6">
+                <p className="italic font-medium text-lg mb-6 text-[var(--color-text-primary)] body-serif">
                   "The true joy of Ranthambore lies in its unpredictability — each visit reveals a new chapter in the jungle's ever-unfolding story."
                 </p>
-                <a href="#booking" className="inline-block px-6 py-3 bg-[#3C3228] text-[#f5ebe0]  font-bold rounded-lg shadow-md hover:bg-[#D0D68F] transition-colors">
+                <a href="#booking" className="inline-block px-6 py-3 bg-[var(--color-primary)] text-[var(--color-surface)] font-bold rounded-lg shadow-md hover:bg-[var(--color-primary)]/90 transition-colors">
                   Book Your Safari Experience
                 </a>
               </div>
             </div>
 
             {/* Flora and Fauna Section with Interactive Cards */}
-            <div className="bg-[#f5ebe0] rounded-lg p-8 mb-16">
+            <div className="bg-[var(--color-surface-alt)] rounded-lg p-8 mb-16">
               <div className="flex flex-col md:flex-row gap-8 items-center mb-8">
                 <div className="md:w-1/2">
                   <div 
                     className="flex items-center mb-4 cursor-pointer" 
                     onClick={() => setShowFlora(!showFlora)}
                   >
-                    <div className="p-2 bg-white rounded-full mr-3">
-                      <Leaf className="h-6 w-6 text-[#2A4010]" />
+                    <div className="p-2 bg-[var(--color-surface)] rounded-full mr-3">
+                      <Leaf className="h-6 w-6 text-[var(--color-primary)]" />
                     </div>
-                    <h3 className="text-2xl font-bold text-[#2A4010]">
+                    <h3 className="text-2xl font-bold text-[var(--color-text-primary)] heading-serif">
                       Flora Highlights
                     </h3>
                     <div className="ml-2">
                       {showFlora ? 
-                        <ChevronUp className="h-5 w-5 text-[#2A4010]" /> : 
-                        <ChevronDown className="h-5 w-5 text-[#2A4010]" />
+                        <ChevronUp className="h-5 w-5 text-[var(--color-text-primary)]" /> : 
+                        <ChevronDown className="h-5 w-5 text-[var(--color-text-primary)]" />
                       }
                     </div>
                   </div>
                   
-                  <ul className="list-disc pl-5 text-gray-700 space-y-2 mb-6">
+                  <ul className="list-disc pl-5 text-[var(--color-text-secondary)] space-y-2 mb-6 body-sans">
                     <li>Ancient banyan trees, some among India's oldest</li>
                     <li>Dhok forest (Anogeissus pendula), covering over 80% of the park</li>
                     <li>Medicinal plants with traditional Ayurvedic importance</li>
@@ -654,21 +649,21 @@ const Wildlife: React.FC = () => {
                     className="flex items-center mb-4 cursor-pointer"
                     onClick={() => setShowFauna(!showFauna)}
                   >
-                    <div className="p-2 bg-white rounded-full mr-3">
-                      <Fish className="h-6 w-6 text-[#2A4010]" />
+                    <div className="p-2 bg-[var(--color-surface)] rounded-full mr-3">
+                      <Fish className="h-6 w-6 text-[var(--color-primary)]" />
                     </div>
-                    <h3 className="text-2xl font-bold text-[#2A4010]">
+                    <h3 className="text-2xl font-bold text-[var(--color-text-primary)] heading-serif">
                       Fauna Diversity
                     </h3>
                     <div className="ml-2">
                       {showFauna ? 
-                        <ChevronUp className="h-5 w-5 text-[#2A4010]" /> : 
-                        <ChevronDown className="h-5 w-5 text-[#2A4010]" />
+                        <ChevronUp className="h-5 w-5 text-[var(--color-text-primary)]" /> : 
+                        <ChevronDown className="h-5 w-5 text-[var(--color-text-primary)]" />
                       }
                     </div>
                   </div>
                   
-                  <ul className="list-disc pl-5 text-gray-700 space-y-2">
+                  <ul className="list-disc pl-5 text-[var(--color-text-secondary)] space-y-2 body-sans">
                     <li>40+ mammal species including tigers, leopards, sloth bears</li>
                     <li>300+ bird species, both resident and migratory</li>
                     <li>Diverse reptiles including marsh crocodiles and pythons</li>
@@ -682,8 +677,8 @@ const Wildlife: React.FC = () => {
                       alt="Ranthambore Wildlife"
                       className="w-full h-auto"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
-                      <p className="text-white font-bold italic">
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[var(--color-background)]/90 to-transparent p-4">
+                      <p className="text-[var(--color-surface)] font-bold italic body-serif">
                         "Ranthambore's lakes and watering holes are biodiversity hotspots where multiple species converge — creating a microcosm of the jungle's ecosystem."
                       </p>
                     </div>
@@ -764,25 +759,25 @@ const Wildlife: React.FC = () => {
 
         {/* Species Tab Content */}
         {activeTab === 'species' && (
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-[#2A4010] mb-8 text-center border-b-2 border-[#BBB157] pb-4">
+          <div className="bg-[var(--color-surface)] rounded-lg shadow-lg p-8">
+            <h3 className="text-2xl font-bold text-[var(--color-text-primary)] mb-8 text-center border-b-2 border-[var(--color-accent)] pb-4 heading-serif">
               Comprehensive Species Guide
             </h3>
             
             {wildlifeCategories.map((category, index) => (
               <div key={index} className="mb-16 last:mb-0">
                 <div className="flex items-center mb-6">
-                  <div className="p-2 bg-[#F0F2E3] rounded-full mr-3">
+                  <div className="p-2 bg-[var(--color-surface-alt)] rounded-full mr-3">
                     {category.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-[#2A4010]">{category.title}</h3>
+                  <h3 className="text-2xl font-bold text-[var(--color-text-primary)] heading-serif">{category.title}</h3>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {category.species.map((animal) => (
                     <div 
                       key={animal.id} 
-                      className="bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-gray-100 cursor-pointer"
+                      className="bg-[var(--color-surface)] rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border border-[var(--color-border)] cursor-pointer"
                       onClick={() => toggleModal(animal)}
                     >
                       <div className="h-48 overflow-hidden relative">
@@ -795,23 +790,23 @@ const Wildlife: React.FC = () => {
                           <div className="absolute top-3 right-3">
                             <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                               animal.conservationStatus.includes('Endangered') || animal.conservationStatus.includes('Critically') 
-                                ? 'bg-red-500 text-white' 
+                                ? 'bg-red-500 text-[var(--color-surface)]' 
                                 : animal.conservationStatus.includes('Vulnerable') || animal.conservationStatus.includes('Near') 
-                                  ? 'bg-yellow-400 text-gray-800'
-                                  : 'bg-green-500 text-white'
+                                  ? 'bg-yellow-400 text-[var(--color-text-primary)]'
+                                  : 'bg-green-500 text-[var(--color-surface)]'
                             }`}>
                               {animal.conservationStatus}
                             </span>
                           </div>
                         )}
                       </div>
-                      <div className="p-6 border-t-4 border-[#BBB157]">
-                        <h4 className="text-xl font-bold text-[#2A4010] mb-2">{animal.name}</h4>
-                        <p className="text-sm italic text-gray-500 mb-3">
+                      <div className="p-6 border-t-4 border-[var(--color-accent)]">
+                        <h4 className="text-xl font-bold text-[var(--color-text-primary)] mb-2 heading-serif">{animal.name}</h4>
+                        <p className="text-sm italic text-[var(--color-text-secondary)] mb-3 body-sans">
                           {animal.scientificName}
                         </p>
-                        <p className="text-gray-600 line-clamp-3">{animal.description}</p>
-                        <div className="flex items-center mt-4 text-[#2A4010] font-medium">
+                        <p className="text-[var(--color-text-secondary)] line-clamp-3 body-sans">{animal.description}</p>
+                        <div className="flex items-center mt-4 text-[var(--color-text-primary)] font-medium">
                           View Details
                           <ExternalLink className="h-4 w-4 ml-1" />
                         </div>
@@ -893,12 +888,10 @@ const Wildlife: React.FC = () => {
               </div>
             </div>
           </div>
-        )}
-
-        {/* Conservation Note */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mt-12 border-l-4 border-[#BBB157]">
-          <h3 className="text-xl font-bold text-[#2A4010] mb-4">Conservation Message</h3>
-          <p className="text-gray-600 leading-relaxed">
+        )}          {/* Conservation Note */}
+        <div className="bg-[var(--color-surface)] rounded-lg shadow-lg p-8 mt-12 border-l-4 border-[var(--color-accent)]">
+          <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-4 heading-serif">Conservation Message</h3>
+          <p className="text-[var(--color-text-secondary)] leading-relaxed body-sans">
             Ranthambore National Park plays a crucial role in Project Tiger, India's tiger conservation initiative. The park's ecosystem supports not just tigers but a complex web of interdependent species. When visiting, remember that we are guests in their home — maintain silence during safaris, follow guide instructions, and take nothing but photographs. Your responsible tourism helps ensure these magnificent creatures thrive for generations to come.
           </p>
         </div>
@@ -906,8 +899,8 @@ const Wildlife: React.FC = () => {
 
       {/* Species Detail Modal */}
       {isModalOpen && modalContent && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden">
+        <div className="fixed inset-0 bg-[var(--color-background)]/60 z-50 flex items-center justify-center p-4">
+          <div className="bg-[var(--color-surface)] rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden">
             <div className="relative h-64 overflow-hidden">
               <img 
                 src={modalContent.image} 
@@ -915,19 +908,19 @@ const Wildlife: React.FC = () => {
                 className="w-full h-full object-cover"
               />
               <button 
-                className="absolute top-3 right-3 bg-white p-1 rounded-full shadow-md"
+                className="absolute top-3 right-3 bg-[var(--color-surface)] p-1 rounded-full shadow-md hover:bg-[var(--color-surface-alt)] transition-colors"
                 onClick={() => setIsModalOpen(false)}
               >
-                <X className="h-6 w-6 text-[#2A4010]" />
+                <X className="h-6 w-6 text-[var(--color-text-primary)]" />
               </button>
               {modalContent.conservationStatus && (
                 <div className="absolute bottom-3 right-3">
                   <span className={`px-3 py-1 rounded-full text-sm font-bold ${
                     modalContent.conservationStatus.includes('Endangered') || modalContent.conservationStatus.includes('Critically') 
-                      ? 'bg-red-500 text-white' 
+                      ? 'bg-red-500 text-[var(--color-surface)]' 
                       : modalContent.conservationStatus.includes('Vulnerable') || modalContent.conservationStatus.includes('Near') 
-                        ? 'bg-yellow-400 text-gray-800'
-                        : 'bg-green-500 text-white'
+                        ? 'bg-yellow-400 text-[var(--color-text-primary)]'
+                        : 'bg-green-500 text-[var(--color-surface)]'
                   }`}>
                     {modalContent.conservationStatus}
                   </span>
@@ -937,19 +930,19 @@ const Wildlife: React.FC = () => {
             <div className="p-6">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-[#2A4010]">{modalContent.name}</h3>
+                  <h3 className="text-2xl font-bold text-[var(--color-text-primary)] heading-serif">{modalContent.name}</h3>
                   {modalContent.scientificName && (
-                    <p className="text-gray-500 italic">{modalContent.scientificName}</p>
+                    <p className="text-[var(--color-text-secondary)] italic body-sans">{modalContent.scientificName}</p>
                   )}
                 </div>
               </div>
-              <div className="prose max-w-none text-gray-700">
-                <p className="mb-4">{modalContent.description}</p>
+              <div className="prose max-w-none text-[var(--color-text-secondary)]">
+                <p className="mb-4 body-sans">{modalContent.description}</p>
                 {/* Add additional species information sections as needed */}
               </div>
-              <div className="mt-6 pt-4 border-t border-gray-200 flex justify-end">
+              <div className="mt-6 pt-4 border-t border-[var(--color-border)] flex justify-end">
                 <button 
-                  className="px-4 py-2 bg-[#2A4010] text-white rounded-lg hover:bg-[#3B5419] transition-colors"
+                  className="px-4 py-2 bg-[var(--color-primary)] text-[var(--color-surface)] rounded-lg hover:bg-[var(--color-primary)]/90 transition-colors"
                   onClick={() => setIsModalOpen(false)}
                 >
                   Close

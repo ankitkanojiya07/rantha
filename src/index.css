@@ -3,144 +3,128 @@
 @tailwind utilities;
 
 /* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Primary Colors */
-  --color-primary: #2C2417;      /* Deep brown */
-  --color-secondary: #8B7355;    /* Earth brown */
-  --color-accent: #594D3C;       /* Warm brown */
-  
-  /* Background Colors */
-  --color-background: #FCFBF8;   /* Cream white */
-  --color-surface: #F5F1EA;      /* Light beige */
-  --color-surface-alt: #E9E5DC;  /* Warm beige */
-  
-  /* Text Colors */
-  --color-text-primary: #3A3229; /* Rich brown */
-  --color-text-secondary: #594D3C; /* Warm brown */
-  --color-text-light: #D4C9B9;   /* Light beige */
-  
-  /* Border Colors */
-  --color-border: #D4C9B9;       /* Light beige */
-  --color-border-dark: #8B7355;  /* Earth brown */
+  --background: hsl(47 47% 96%);
+  --foreground: hsl(47 23% 19%);
+  --card: hsl(47 47% 96%);
+  --card-foreground: hsl(0 0% 8%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(51 21% 13%);
+  --primary: hsl(15 57% 53%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(42 17% 89%);
+  --secondary-foreground: hsl(51 9% 29%);
+  --muted: hsl(45 36% 89%);
+  --muted-foreground: hsl(45 3% 51%);
+  --accent: hsl(42 17% 89%);
+  --accent-foreground: hsl(51 21% 13%);
+  --destructive: hsl(0 0% 8%);
+  --border: hsl(53 11% 83%);
+  --input: hsl(49 10% 67%);
+  --ring: hsl(210 78% 49%);
+  --chart-1: hsl(18 58% 44%);
+  --chart-2: hsl(251 86% 75%);
+  --chart-3: hsl(45 30% 82%);
+  --chart-4: hsl(257 48% 88%);
+  --chart-5: hsl(18 58% 44%);
+  --sidebar: hsl(47 36% 95%);
+  --sidebar-foreground: hsl(60 5% 23%);
+  --sidebar-primary: hsl(15 57% 53%);
+  --sidebar-primary-foreground: hsl(0 0% 99%);
+  --sidebar-accent: hsl(42 17% 89%);
+  --sidebar-accent-foreground: hsl(0 0% 21%);
+  --sidebar-border: hsl(0 0% 92%);
+  --sidebar-ring: hsl(0 0% 71%);
+
+  --font-sans: 'Cormorant Garamond', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-mono: 'Cormorant Garamond', monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--background);
+  --color-surface-alt: var(--muted);
+  --color-text-primary: var(--foreground);
+  --color-text-secondary: var(--muted-foreground);
+  --color-text-light: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-border-dark: var(--destructive);
+
+  --radius: 0.5rem;
 }
 
-@layer base {
-  html, body {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-  }
-  
-  body {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--color-text-primary);
-    background-color: var(--color-background);
-    font-weight: 300;
-    line-height: 1.75;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant', serif;
-    color: var(--color-primary);
-    font-weight: 600;
-    line-height: 1.2;
-  }
-
-  h1 {
-    font-size: 3.5rem;
-    letter-spacing: -0.02em;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-    letter-spacing: -0.01em;
-  }
-
-  h3 {
-    font-size: 2rem;
-  }
+.dark {
+  --background: hsl(0 0% 15%);
+  --foreground: hsl(47 7% 75%);
+  --card: hsl(0 0% 15%);
+  --card-foreground: hsl(47 47% 96%);
+  --popover: hsl(0 0% 19%);
+  --popover-foreground: hsl(0 0% 89%);
+  --primary: hsl(15 62% 59%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(47 47% 96%);
+  --secondary-foreground: hsl(0 0% 19%);
+  --muted: hsl(0 0% 11%);
+  --muted-foreground: hsl(53 11% 68%);
+  --accent: hsl(43 16% 9%);
+  --accent-foreground: hsl(47 36% 95%);
+  --destructive: hsl(0 86% 61%);
+  --border: hsl(60 5% 23%);
+  --input: hsl(51 5% 30%);
+  --ring: hsl(210 78% 49%);
+  --chart-1: hsl(18 58% 44%);
+  --chart-2: hsl(251 86% 75%);
+  --chart-3: hsl(43 16% 9%);
+  --chart-4: hsl(249 24% 23%);
+  --chart-5: hsl(18 58% 44%);
+  --sidebar: hsl(0 0% 12%);
+  --sidebar-foreground: hsl(47 7% 75%);
+  --sidebar-primary: hsl(0 0% 21%);
+  --sidebar-primary-foreground: hsl(0 0% 99%);
+  --sidebar-accent: hsl(0 0% 6%);
+  --sidebar-accent-foreground: hsl(47 7% 75%);
+  --sidebar-border: hsl(0 0% 92%);
+  --sidebar-ring: hsl(0 0% 71%);
 }
 
 /* Typography Classes */
 .heading-serif {
-  font-family: 'Cormorant', serif;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
 }
 
 .body-sans {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
+  font-weight: 400;
 }
 
-.text-small {
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
-}
-
-.text-tiny {
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-/* Button Styles */
-.btn {
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.375rem;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  transition: all 300ms;
-}
-
-.btn-primary {
-  background-color: var(--color-secondary);
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: var(--color-accent);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  border: 2px solid var(--color-secondary);
-  color: var(--color-secondary);
-}
-
-.btn-secondary:hover {
-  background-color: var(--color-secondary);
-  color: white;
-}
-
-/* Card Styles */
-.card {
-  background-color: white;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  border: 1px solid var(--color-border);
-}
-
-/* Container Styles */
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  max-width: 80rem;
-}
-
-@media (min-width: 640px) {
-  .container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+/* Custom utility classes */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
-@media (min-width: 1024px) {
-  .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+/* Base styles */
+@layer base {
+  html {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
   }
 }

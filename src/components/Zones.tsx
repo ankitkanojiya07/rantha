@@ -31,10 +31,10 @@ const ZONE_DATA: Record<ZoneId, ZoneData> = {
     image: "./zone1.jpg",
     highlights:  [
       "Zone 1: T-101 (M), T-105(F), T-107(F) & T-39(F)",
-      "Zone 2: T-84(F) with 3 cubs, T-101 (M), T-105(F), T-120(M), T-123(M)	",
-      "Zone 3: T-124(F) with 3 cubs, T-120(M)	",
-      "Zone 4: T-84(F) with 3 cubs, T-111(F), T-120(M), T-121(M), T-112(M)	",
-      "Zone 5: T-120(M), T-121(M), T-125(F) with 2 cubs, T-2311(M), T-112(M)	"
+      "Zone 2: T-84(F) with 3 cubs, T-101 (M), T-105(F), T-120(M), T-123(M)",
+      "Zone 3: T-124(F) with 3 cubs, T-120(M)",
+      "Zone 4: T-84(F) with 3 cubs, T-111(F), T-120(M), T-121(M), T-112(M)",
+      "Zone 5: T-120(M), T-121(M), T-125(F) with 2 cubs, T-2311(M), T-112(M)"
     ],
     detailedInfo: {
       bestTime: "November to March, Early mornings (6:00-9:00 AM)",
@@ -62,9 +62,9 @@ const ZONE_DATA: Record<ZoneId, ZoneData> = {
     description: "Less crowded but equally fascinating, these zones offer a more rustic experience. Zone 6 (Kundal) is known for its open meadows and exceptional birding opportunities.",
     image: "./zone2.jpg",
     highlights: [
-      "Zone 6: 	T-39(F), T-108(M), T-127(F), T-101(M)",
+      "Zone 6: T-39(F), T-108(M), T-127(F), T-101(M)",
       "Zone 7: T-108(M), T-127(F), T-8(F)",
-      "Zone 8: 	T-2309(M), T-129(M), T-2310(F)",
+      "Zone 8: T-2309(M), T-129(M), T-2310(F)",
       "Zone 9: T-108 (M), T-127(F)",
       "Zone 10: T-108(M), T-99(F), T-08(F), T-129(M),"
     ],
@@ -124,7 +124,7 @@ const ZONE_DATA: Record<ZoneId, ZoneData> = {
 // Separate subcomponents for better organization
 const ZoneHighlight: React.FC<{ text: string }> = ({ text }) => (
   <li className="flex items-start">
-    <span className="text-[#2b2d42] mr-2">•</span>
+    <span className="text-green-800 mr-2">•</span>
     <span>{text}</span>
   </li>
 );
@@ -134,17 +134,17 @@ const DetailInfoCard: React.FC<{ icon: React.ReactNode; title: string; children:
   title, 
   children 
 }) => (
-  <div className="bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-100">
-    <h3 className="text-xl font-bold text-[#2b2d42] mb-4 flex items-center">
+  <div className="bg-white p-4 rounded-lg shadow-md">
+    <h3 className="text-xl font-bold text-green-900 mb-4 flex items-center">
       {icon}
-      {title}
+      <span className="ml-2">{title}</span>
     </h3>
     {children}
   </div>
 );
 
 const WildlifeTag: React.FC<{ name: string }> = ({ name }) => (
-  <span className=" bg-[#f5ebe0] text-[#2b2d42] px-3 py-1 rounded-full text-sm font-medium">
+  <span className="bg-green-50 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
     {name}
   </span>
 );
@@ -167,7 +167,7 @@ const ZoneDetailModal: React.FC<{
           />
           <button 
             onClick={onClose}
-            className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500"
             aria-label="Close details"
           >
             <X size={24} className="text-gray-800" />
@@ -175,19 +175,19 @@ const ZoneDetailModal: React.FC<{
         </div>
         
         <div className="p-8">
-          <h2 className="text-3xl font-bold text-[#2b2d42] mb-2">{zone.name}</h2>
+          <h2 className="text-3xl font-bold text-green-900 mb-2">{zone.name}</h2>
           <p className="text-gray-600 mb-8 text-lg">{zone.description}</p>
           
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <DetailInfoCard 
-              icon={<Clock className="mr-2 text-[#2b2d42]" size={20} />} 
+              icon={<Clock className="text-green-700" size={20} />} 
               title="Best Time to Visit"
             >
               <p className="text-gray-700">{zone.detailedInfo.bestTime}</p>
             </DetailInfoCard>
             
             <DetailInfoCard 
-              icon={<Calendar className="mr-2 text-[#2b2d42]" size={20} />} 
+              icon={<Calendar className="text-green-700" size={20} />} 
               title="Duration & Difficulty"
             >
               <p className="text-gray-700">
@@ -198,7 +198,7 @@ const ZoneDetailModal: React.FC<{
           </div>
           
           <DetailInfoCard 
-            icon={<Award className="mr-2 text-[#2b2d42]" size={20} />} 
+            icon={<Award className="text-green-700" size={20} />} 
             title="Wildlife Highlights"
           >
             <div className="flex flex-wrap gap-2">
@@ -210,7 +210,7 @@ const ZoneDetailModal: React.FC<{
           
           <div className="mt-6">
             <DetailInfoCard 
-              icon={<Camera className="mr-2 text-[#2b2d42]" size={20} />} 
+              icon={<Camera className="text-green-700" size={20} />} 
               title="Photography"
             >
               <p className="text-gray-700">{zone.detailedInfo.photography}</p>
@@ -219,7 +219,7 @@ const ZoneDetailModal: React.FC<{
           
           <div className="mt-6">
             <DetailInfoCard 
-              icon={<AlertTriangle className="mr-2 text-[#2b2d42]" size={20} />} 
+              icon={<AlertTriangle className="text-green-700" size={20} />} 
               title="Essential Tips"
             >
               <ul className="space-y-2">
@@ -233,14 +233,14 @@ const ZoneDetailModal: React.FC<{
           <div className="mt-8 flex justify-between items-center">
             <button 
               onClick={onClose}
-              className="px-6 py-3 bg-gray-200 text-gray-800 rounded-full hover:bg-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400"
+              className="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400"
             >
               Close
             </button>
             
             <a 
               href="#booking" 
-              className="px-6 py-3 bg-[#f5ebe0] text-[#2b2d42] rounded-full hover:bg-[#f5ebe0]-800 transition-colors flex items-center focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="px-6 py-3 bg-green-100 text-green-800 rounded-lg hover:bg-green-200 transition-colors flex items-center focus:outline-none focus:ring-2 focus:ring-green-500"
               onClick={onClose}
             >
               Book Safari
@@ -268,13 +268,13 @@ const Zones: React.FC = () => {
   const currentZone = ZONE_DATA[activeZone];
 
   return (
-    <section id="zones" className="py-20 bg-gray-50">
+    <section id="zones" className="py-20 bg-[var(--color-surface)]">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text--800 inline-block border-b-4 border-teal-400 pb-2">
+        <div className="text-center mb-12">
+          <h2 className="heading-serif text-3xl md:text-4xl font-bold text-[var(--color-primary)] inline-block border-b-4 border-[var(--color-secondary)] pb-2">
             Explore Park Zones
           </h2>
-          <p className="mt-4 text-gray-600 max-w-3xl mx-auto text-lg">
+          <p className="mt-4 text-[var(--color-text-secondary)] max-w-3xl mx-auto body-sans">
             Ranthambore is divided into 10 zones, each offering unique wildlife experiences and landscapes. 
             From open grasslands to dense forests and serene lakes, every zone has its own charm.
           </p>
@@ -287,10 +287,10 @@ const Zones: React.FC = () => {
             return (
               <button
                 key={zone.id}
-                className={`px-6 py-3 rounded-full font-bold mx-2 mb-2 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500 ${
+                className={`px-6 py-3 rounded-lg font-bold mx-2 mb-2 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 ${
                   activeZone === zone.id 
-                    ? 'bg-[#f5ebe0] text-[#2b2d42] shadow-md' 
-                    : 'bg-white text-[#2b2d42] hover:bg-[#f5ebe0]-100 shadow-sm'
+                    ? 'bg-green-100 text-green-900 shadow-md' 
+                    : 'bg-white text-green-800 hover:bg-green-50 shadow-sm'
                 }`}
                 onClick={() => setActiveZone(zone.id as ZoneId)}
                 aria-pressed={activeZone === zone.id}
@@ -303,50 +303,54 @@ const Zones: React.FC = () => {
         </div>
 
         {/* Zone Content */}
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100">
-          <div className="md:flex">
-            <div className="md:w-1/2">
-              <img 
-                src={currentZone.image} 
-                alt={currentZone.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="md:w-1/2 p-8">
-              <h3 className="text-2xl font-bold text-[#2b2d42] mb-4">{currentZone.name}</h3>
-              <p className="text-gray-700 mb-6 text-lg">{currentZone.description}</p>
-              
-              <h4 className="text-lg font-bold text-[#2b2d42] mb-3 flex items-center">
-                <Map className="mr-2 text-[#2b2d42]" size={18} />
-                Zone Highlights Tiger
-              </h4>
-              <ul className="space-y-2 text-gray-700 mb-8">
-                {currentZone.highlights.map((highlight, index) => (
-                  <ZoneHighlight key={index} text={highlight} />
-                ))}
-              </ul>
-              
-              <div className="mt-8">
-                <button 
-                  onClick={handleExploreClick}
-                  className="inline-flex items-center px-6 py-3 bg-[#f5ebe0] text-[#2b2d42] font-bold rounded-full hover:bg-[#f5ebe0] hover:text-[#2b2d42]  transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500"
-                  aria-label={`Explore ${currentZone.name} in detail`}
-                >
-                  Explore {currentZone.name}
-                  <ChevronRight size={18} className="ml-1" />
-                </button>
+        <div className="grid gap-8 max-w-4xl mx-auto">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="md:flex">
+              <div className="md:w-1/2">
+                <img 
+                  src={currentZone.image} 
+                  alt={currentZone.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="md:w-1/2 p-6">
+                <h3 className="text-2xl font-bold text-green-900 mb-4">{currentZone.name}</h3>
+                <p className="text-gray-700 mb-6">{currentZone.description}</p>
+                
+                <div className="bg-green-50 p-4 rounded-md mb-6">
+                  <h4 className="text-lg font-bold text-green-800 mb-3 flex items-center">
+                    <Map className="mr-2" size={18} />
+                    Zone Tiger Highlights
+                  </h4>
+                  <ul className="space-y-2 text-green-800">
+                    {currentZone.highlights.map((highlight, index) => (
+                      <ZoneHighlight key={index} text={highlight} />
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="mt-6">
+                  <button 
+                    onClick={handleExploreClick}
+                    className="inline-flex items-center px-6 py-3 bg-green-100 text-green-800 font-bold rounded-lg hover:bg-green-200 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500"
+                    aria-label={`Explore ${currentZone.name} in detail`}
+                  >
+                    Explore {currentZone.name}
+                    <ChevronRight size={18} className="ml-1" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Pro Tip Section */}
-        <div className="mt-12 bg-[#f5ebe0] text-[#2b2d42] p-6 rounded-lg shadow-md">
-          <h4 className="text-xl font-bold mb-3 flex items-center">
-            <Award className="mr-2" size={20} />
-            Pro Tip
-          </h4>
-          <p className="text-lg">Early morning safaris often have more wildlife movement and better photography opportunities!</p>
+          {/* Pro Tip Section */}
+          <div className="bg-amber-50 p-4 rounded-md">
+            <h4 className="text-xl font-bold text-amber-800 mb-3 flex items-center">
+              <Award className="mr-2" size={20} />
+              Pro Tip
+            </h4>
+            <p className="text-amber-700">Early morning safaris often have more wildlife movement and better photography opportunities!</p>
+          </div>
         </div>
       </div>
 

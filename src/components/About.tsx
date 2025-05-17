@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ChevronDown, ChevronUp, Leaf, Castle, Crown, Shield } from 'lucide-react';
+import { Chen, ChevronUp, ChevronDown, Leaf, Castle, Crown, Shield } from 'lucide-react';
 
 const About: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -64,9 +64,8 @@ const About: React.FC = () => {
     <section 
       id="about" 
       ref={sectionRef}
-      className={`py-24 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+      className={`py-24 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'} bg-[var(--color-background)]`}
       style={{
-        background: "linear-gradient(to bottom, var(--color-surface), var(--color-surface-alt))",
         position: "relative"
       }}
     >

@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
         ))}
 
         {/* Very light overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-background)]/10 via-transparent to-[var(--color-background)]/10" />
       </div>
 
       <div className="relative z-10 container mx-auto px-6 pt-32 pb-16 flex flex-col items-center">

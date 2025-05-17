@@ -87,6 +87,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
     { id: 'about', label: 'About', icon: <Info size={18} /> },
     { id: 'wildlife', label: 'Wildlife', icon: <Camera size={18} /> },
     { id: 'zones', label: 'Park Zones', icon: <Map size={18} /> },
+    { id: 'sightings', label: 'Sightings update', icon: <car size={18} /> },
     { id: 'safari', label: 'Safari', icon: <Car size={18} /> },
     { id: 'gallery', label: 'Gallery', icon: <Image size={18} /> },
     { id: 'conservation', label: 'Conservation', icon: <Heart size={18} /> },
@@ -97,7 +98,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
   return (
     <>
       <div 
-        className={`fixed inset-0 bg-black transition-all duration-500 ${
+        className={`fixed inset-0 bg-[var(--color-background)] transition-all duration-500 ${
           isMenuOpen ? 'opacity-50 z-40' : 'opacity-0 -z-10'
         }`}
         aria-hidden="true"
@@ -114,7 +115,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-orange-500 to-red-500" />
         
         <div className="flex justify-between items-center p-6 border-b border-teal-700">
-          <span className="text-white font-bold tracking-wider text-lg flex items-center">
+          <span className="text-[var(--color-text-primary)] font-bold tracking-wider text-lg flex items-center">
             RANTHAMBORE
           </span>
           <button 
@@ -136,8 +137,8 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                   href={`#${link.id}`}
                   className={`flex items-center px-6 py-3.5 font-medium transition-all duration-300 relative group ${
                     activeSection === link.id
-                      ? 'bg-white-700/70 text-white'
-                      : 'text-gray-100 hover:bg-teal-700/40 hover:text-white'
+                      ? 'bg-[var(--color-primary)]/70 text-[var(--color-primary-foreground)]'
+                      : 'text-[var(--color-text-primary)] hover:bg-[var(--color-primary)]/40 hover:text-[var(--color-primary-foreground)]'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -165,7 +166,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
          <div className="w-full px-6 mt-6 mb-4">
           <a
             href="#booking"
-            className="block w-full py-3 text-[#3C3228] bg-[#f5ebe0]  font-bold text-center rounded-lg hover:shadow-lg transform transition-all duration-300 hover:translate-y-px active:translate-y-1 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
+            className="block w-full py-3 text-[var(--color-text-primary)] bg-[var(--color-accent)] font-bold text-center rounded-lg hover:shadow-lg transform transition-all duration-300 hover:translate-y-px active:translate-y-1 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/50"
             onClick={() => setIsMenuOpen(false)}
           >
             Book Safari Now
@@ -176,8 +177,8 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
       <header
         className={`fixed top-0 left-0 w-full z-30 transition-all duration-500 ${
           isScrolled 
-            ? 'bg-black/60 backdrop-blur-md shadow-lg py-2' 
-            : 'bg-gradient-to-b from-black/60 to-transparent py-4'
+            ? 'bg-[var(--color-background)]/60 backdrop-blur-md shadow-lg py-2' 
+            : 'bg-gradient-to-b from-[var(--color-background)]/60 to-transparent py-4'
         } ${isHeaderVisible ? 'translate-y-0' : '-translate-y-full'}`}
       >
         <div className="container mx-auto px-4">
@@ -199,7 +200,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
             
             <div className="flex items-center space-x-2">              
               <button
-                className="menu-button relative p-2.5 text-white/90 hover:text-white rounded-full transition-all duration-300 hover:bg-teal-700/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-teal-800 focus:ring-white/30"
+                className="menu-button relative p-2.5 text-[var(--color-text-primary)]/90 hover:text-[var(--color-text-primary)] rounded-full transition-all duration-300 hover:bg-[var(--color-primary)]/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[var(--color-primary)] focus:ring-[var(--color-text-primary)]/30"
                 onClick={toggleMenu}
                 aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isMenuOpen}
@@ -215,7 +216,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
         </div>
         
         <div className="absolute bottom-0 left-0 w-full h-0.5 bg-transparent">
-          <div className="h-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-500" style={{ 
+          <div className="h-full bg-[var(--color-primary)]" style={{ 
             width: typeof window !== 'undefined' ? `${Math.min((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100, 100)}%` : '0%',
             transition: 'width 0.1s ease-out'
           }}></div>

@@ -32,19 +32,19 @@ const InfoCard: React.FC<InfoCard> = ({ icon, title, content }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 border-t-4 border-amber-400 hover:shadow-xl transition-shadow duration-300">
+    <div className="bg-[var(--color-surface)] rounded-lg shadow-lg p-6 border-t-4 border-[var(--color-accent)] hover:shadow-xl transition-shadow duration-300">
       <div className="flex flex-col h-full">
         <div className="flex items-center mb-4">
-          <div className="p-3 bg-green-50 rounded-full mr-3">
+          <div className="p-3 bg-[var(--color-surface-alt)] rounded-full mr-3">
             {icon}
           </div>
-          <h3 className="text-xl font-bold text-green-900">{title}</h3>
+          <h3 className="text-xl font-bold text-[var(--color-text-primary)] heading-serif">{title}</h3>
         </div>
-        <div className="text-gray-600 flex-grow">
+        <div className="text-[var(--color-text-secondary)] flex-grow">
           {isSafariTimings ? (
             <>
               <div className={expanded ? "" : "line-clamp-4"}>
-                <h4 className="font-semibold text-green-800 mb-2">Safari Schedule: An Overview</h4>
+                <h4 className="font-semibold text-[var(--color-text-primary)] mb-2">Safari Schedule: An Overview</h4>
                 <p className="mb-2">Please note that safari timings in Ranthambhore National Park shift slightly (approximately ±1 hour) depending on the season. Our team will confirm your exact safari timings when you arrive. Below is a general outline to help you plan:</p>
                 
                 <h5 className="font-semibold mt-3 mb-1">Arrival & Briefing</h5>
@@ -80,7 +80,7 @@ const InfoCard: React.FC<InfoCard> = ({ icon, title, content }) => {
               </div>
               <button 
                 onClick={toggleExpand} 
-                className="flex items-center justify-center w-full mt-4 py-2 text-green-700 font-medium hover:text-green-900 transition-colors border-t border-gray-200 pt-2"
+                className="flex items-center justify-center w-full mt-4 py-2 text-[var(--color-primary)] font-medium hover:text-[var(--color-primary)]/80 transition-colors border-t border-[var(--color-border)] pt-2"
               >
                 {expanded ? "Show Less" : "Read More"}
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`} />
@@ -100,7 +100,7 @@ const SafariTypeCard: React.FC<SafariType & { onClick: () => void }> = ({
   title, description, image, icon, onClick 
 }) => (
   <div 
-    className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:translate-y-1 group cursor-pointer" 
+    className="bg-[var(--color-surface)] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:translate-y-1 group cursor-pointer" 
     onClick={onClick}
   >
     <div className="h-64 relative">
@@ -109,7 +109,7 @@ const SafariTypeCard: React.FC<SafariType & { onClick: () => void }> = ({
         alt={title}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-background)]/80 to-transparent"></div>
       <div className="absolute bottom-4 left-4 text-white flex items-center">
         <div className="mr-3">
           {icon}
@@ -132,13 +132,13 @@ const SafariDetailModal: React.FC<{
   if (!isOpen || !safari) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl overflow-hidden max-w-4xl w-full relative animate-fadeIn">
+    <div className="fixed inset-0 bg-[var(--color-background)]/70 flex items-center justify-center z-50 p-4">
+      <div className="bg-[var(--color-surface)] rounded-xl overflow-hidden max-w-4xl w-full relative animate-fadeIn">
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 bg-white rounded-full p-1 shadow-md hover:bg-gray-100 transition-colors"
+          className="absolute top-4 right-4 bg-[var(--color-surface)] rounded-full p-1 shadow-md hover:bg-[var(--color-surface-alt)] transition-colors"
         >
-          <X className="h-6 w-6 text-gray-800" />
+          <X className="h-6 w-6 text-[var(--color-text-primary)]" />
         </button>
         
         <div className="md:flex">
@@ -228,29 +228,29 @@ const SafariInfo: React.FC = () => {
   // Safari info cards data
   const infoCards: InfoCard[] = [
     {
-      icon: <Clock className="h-8 w-8 text-green-900" />,
+      icon: <Clock className="h-8 w-8 text-[var(--color-text-primary)]" />,
       title: "Safari Timings",
       content: null // Content is handled directly in the InfoCard component
     },
     {
-      icon: <Info className="h-8 w-8 text-green-900" />,
+      icon: <Info className="h-8 w-8 text-[var(--color-text-primary)]" />,
       title: "Booking Tips",
       content: (
         <>
           <p className="mb-2">Book safaris through official websites at least 90 days in advance, especially during peak season (October-June).</p>
           <p className="mb-2">Carry a government-issued photo ID for mandatory park entry verification.</p>
-          <p className="italic text-green-800 font-medium">Patience and silence are key virtues that often reward visitors with rare wildlife sightings.</p>
+          <p className="italic text-[var(--color-text-primary)] font-medium">Patience and silence are key virtues that often reward visitors with rare wildlife sightings.</p>
         </>
       )
     },
     {
-      icon: <ShoppingBag className="h-8 w-8 text-green-900" />,
+      icon: <ShoppingBag className="h-8 w-8 text-[var(--color-text-primary)]" />,
       title: "Safari Essentials",
       content: (
         <>
           <p className="mb-2">Pack earth-toned attire (khaki, olive, brown), binoculars, wide-brimmed hat, SPF 50+ sunscreen, and sufficient water.</p>
           <p className="mb-2">For photography enthusiasts, telephoto lenses (200-600mm) are highly recommended for wildlife captures.</p>
-          <p className="text-green-800 font-medium">Avoid perfumes and noisy accessories that might disturb wildlife.</p>
+          <p className="text-[var(--color-text-primary)] font-medium">Avoid perfumes and noisy accessories that might disturb wildlife.</p>
         </>
       )
     }
@@ -305,17 +305,17 @@ const SafariInfo: React.FC = () => {
   ];
 
   return (
-    <section id="safari" className="py-20 bg-gray-50">
+    <section id="safari" className="py-20 bg-[var(--color-background)]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-green-900 inline-block border-b-4 border-amber-400 pb-2">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] inline-block border-b-4 border-[var(--color-accent)] pb-2 heading-serif">
             Safari Information
           </h2>
-          <p className="mt-4 text-gray-600 max-w-3xl mx-auto text-lg">
+          <p className="mt-4 text-[var(--color-text-secondary)] max-w-3xl mx-auto text-lg body-sans">
             Embark on open Gypsy (6-seater) or Canter (20-seater) safaris through the wild terrains of Ranthambore. 
             Each safari is guided by experienced naturalists who share fascinating insights about the park's ecosystem.
           </p>
-          <p className="mt-2 text-amber-600 font-medium">
+          <p className="mt-2 text-[var(--color-primary)] font-medium body-sans">
             Click on any safari type below to view detailed information
           </p>
         </div>
@@ -347,18 +347,18 @@ const SafariInfo: React.FC = () => {
               alt="Wildlife Safari Experience"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div className="absolute inset-0 bg-[var(--color-background)]/60"></div>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center max-w-2xl px-6">
-                <h3 className="text-3xl font-bold text-white mb-4">Experience the Wild</h3>
-                <p className="text-white text-lg mb-8">
+                <h3 className="text-3xl font-bold text-[var(--color-surface)] mb-4 heading-serif">Experience the Wild</h3>
+                <p className="text-[var(--color-surface)] text-lg mb-8 body-sans">
                   Each safari drive in Ranthambore is a unique adventure, offering close encounters with 
                   the wild inhabitants of this magnificent terrain. The thrill of spotting a tiger amidst 
                   ancient ruins or watching a crocodile bask in the sun by the lakes is unparalleled.
                 </p>
                 <a 
                   href="#booking" 
-                  className="inline-flex items-center px-6 py-3 bg-[#f5ebe0] text-[#3C3228] font-bold rounded-full hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="inline-flex items-center px-6 py-3 bg-[var(--color-accent)] text-[var(--color-text-primary)] font-bold rounded-full hover:bg-[var(--color-surface)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
                 >
                   Book Your Safari
                   <ChevronRight size={18} className="ml-1" />
